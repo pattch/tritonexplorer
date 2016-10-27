@@ -12,6 +12,9 @@ var index = require('./routes/index');
 // Example route
 // var user = require('./routes/user');
 var about = require('./routes/about');
+var ranking = require('./routes/ranking');
+var objective = require('./routes/objective');
+var recommendations = require('./routes/recommendations');
 
 var app = express();
 
@@ -42,6 +45,9 @@ app.get('/', index.view);
 // app.get('/users', user.list);
 // About Me Page
 app.get('/about/', about.view);
+app.get('/ranking/', ranking.view);
+app.get('/objective/', objective.view);
+app.get('/recommendations/', recommendations.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
