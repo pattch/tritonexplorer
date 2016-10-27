@@ -36,9 +36,11 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
+// Home page
 app.get('/', index.view);
 // Example route
 // app.get('/users', user.list);
+// About Me Page
 app.get('/about/', about.view);
 
 http.createServer(app).listen(app.get('port'), function(){
