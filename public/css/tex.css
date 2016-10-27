@@ -1,0 +1,8 @@
+/* Default width of pages */
+.header, .content, .footer {
+	width:360px;
+}
+
+.hidden {
+	display:none;
+}

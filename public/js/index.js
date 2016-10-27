@@ -12,7 +12,7 @@ function initializePage() {
 	// add any functionality and listeners you want here
 	$('.content .upload.floating-button').on('click', function(e) {
 		$('.content .upload.container').toggleClass('hidden');
-		console.log("Clicked");
+		console.log("Upload Clicked");
 		e.preventDefault();
 	});
 }
