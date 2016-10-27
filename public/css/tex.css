@@ -1,3 +1,11 @@
+* {
+	padding:none;
+	margin:0;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;			/* Opera/IE 8+ */
+}
+
 /* Default width of pages */
 .header, .content, .footer {
 	width:360px;
@@ -5,4 +13,54 @@
 
 .hidden {
 	display:none;
+}
+
+.header {
+	color: #fff;
+	background-color: #06F;
+	height: 50px;
+	text-align: center;
+	font-weight:900;
+	font-family: arial;
+	padding-top: 15px;
+}
+
+.footer {
+	background-color: #1B1B1B;
+	height: 50px;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.footer a.nav-button {
+	color: #eee;
+	-webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+.footer a.nav-button:hover {
+	color: #aaa;
 }
