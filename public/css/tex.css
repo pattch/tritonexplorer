@@ -69,6 +69,13 @@
 	display: inline;
 }
 
+div.scroll
+{
+    width:360px;
+    height:450px;
+    overflow: scroll;
+}
+
 .button {
   position: relative;
   display: inline-block;
@@ -140,6 +147,7 @@
   background: #d5452f;
   border-color: #992f1f #ae3623 #ae3623;
 }
+
 
 .controls {
 	margin-top: 10px;
