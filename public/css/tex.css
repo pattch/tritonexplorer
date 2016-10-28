@@ -20,9 +20,21 @@
 	display:none;
 }
 
+.vert-bg {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#075f87+0,1f779f+100 */
+  background: #075f87; /* Old browsers */
+  background: -moz-linear-gradient(top,  #075f87 0%, #1f779f 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #075f87 0%,#1f779f 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #075f87 0%,#1f779f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#075f87', endColorstr='#1f779f',GradientType=0 ); /* IE6-9 */
+}
+
 .header {
 	color: #fff;
-	background: url(https://www.ucsd.edu/common/cwp/active-cherry/img/bg.jpg) repeat-x;
+  /*
+  075F87
+  1F779F*/
+	/*background: url(https://www.ucsd.edu/common/cwp/active-cherry/img/bg.jpg) repeat-x;*/
 	height: 50px;
 	text-align: center;
 	font-weight:900;
@@ -176,7 +188,7 @@ div.scroll
 }
 
 .footer {
-	background: url(https://www.ucsd.edu/common/cwp/active-cherry/img/bg.jpg) repeat-x;
+	/*background: url(https://www.ucsd.edu/common/cwp/active-cherry/img/bg.jpg) repeat-x;*/
 	height: 80px;
 	display: -ms-flexbox;
     display: -webkit-flex;
