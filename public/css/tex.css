@@ -8,7 +8,7 @@
 
 /* Default width of pages */
 .header, .content, .footer {
-	width:360px;
+	width:100%;
 }
 
 .fill {
@@ -211,6 +211,7 @@ div.scroll
 }
 
 .footer a.nav-button {
+  text-align: center;
 	color: #eee;
 	-webkit-order: 0;
     -ms-flex-order: 0;
