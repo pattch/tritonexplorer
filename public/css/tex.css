@@ -96,7 +96,6 @@ html
 div.scroll
 {
     width:360px;
-    height:450px;
     overflow: scroll;
 }
 
