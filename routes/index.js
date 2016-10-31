@@ -16,5 +16,9 @@ exports.view = function(req, res){
 
 exports.location = function(req, res) {
 	var body = req.body;
+	var title = body.title,
+		tags = body.tags,
+		rating = body.rating,
+		description = body.description;
 	console.log(body);
 }
