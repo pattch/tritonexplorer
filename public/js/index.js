@@ -39,3 +39,21 @@ function initMap() {
     var searchBox = new google.maps.places.SearchBox(input);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 }
+
+// Get the GPS data from the browser, if it supports GPS data.
+function getGeoLocationConst() {
+	if(navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(onGeoSuccess,onGeoError);
+	} else {
+		alert("Can't access GPS data.");
+	}
+}
+
+function onGeoSuccess(event) {
+	$('.content form #input-lat').val(event.coords.latitude);
+	$('.content form #input-lng').val(event.coords.longitude);
+}
+
+function onGeoError(event) {
+	alert("Error code " + event.code + ". " + event.message);
+}
