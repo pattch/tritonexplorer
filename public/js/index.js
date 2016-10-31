@@ -15,21 +15,25 @@ function initializePage() {
 		console.log("Upload Clicked");
 		e.preventDefault();
 	});
+
+	// $('#add-location').on('click', function(e) {
+	// 	console.log('Adding Location');
+	// 	add_location();
+	// 	e.preventDefault();
+	// });
 }
 
 // Called by google maps' callback
 function initMap() {
 	// map.data.loadGeoJson('data.json');
 	console.log("InitMap called");
-	var uluru = {lat: 32.8801, lng: -117.2340};
+	var ucsd = {lat: 32.8801, lng: -117.2340};
 	var map = new google.maps.Map($('#map')[0], {
 	  zoom: 15,
-	  center: uluru
+	  center: ucsd
 	});
-	var marker = new google.maps.Marker({
-	  position: uluru,
-	  map: map
-	});
+
+	// map.data.loadGeoJson('./js/map.geojson');
 
 	var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);

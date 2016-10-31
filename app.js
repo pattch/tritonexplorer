@@ -24,7 +24,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
 app.use(express.favicon());
-app.use(express.logger('dev'));
+// app.use(express.logger('dev')); // This is commented out to send messages to console for development
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
@@ -39,16 +39,26 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
+
 // Home page
 app.get('/', index.view);
-// Example route
-// app.get('/users', user.list);
+// Route for adding a new location
+app.post('/', index.location)
+
 // About Me Page
 app.get('/about/', about.view);
+
+// Rankings Page
 app.get('/ranking/', ranking.view);
+
+// Objectives / Missions Page
 app.get('/objective/', objective.view);
+
+// Recommendations Page
 app.get('/recommendations/', recommendations.view);
 
+
+// Start the server
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

@@ -1,0 +1,56 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id" : 1,
+        "name": "Student Services Center",
+        "rating": 3.0,
+        "tags": [],
+        "Description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.2359174489975,
+          32.87866362075371
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id" : 2,
+        "name": "Sun God",
+        "rating": 4.5,
+        "tags": [],
+        "Description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.23982274532318,
+          32.87876273414574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id" : 3,
+        "name": "G Spot",
+        "rating": 4.0,
+        "tags": [],
+        "Description": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.24005341529845,
+          32.87708229664578
+        ]
+      }
+    }
+  ]
+}
