@@ -51,6 +51,7 @@ body{
     font-size: 1.5em;
 	font-family: sans-serif;
 	padding-top: 10px;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 html
@@ -59,23 +60,44 @@ html
 }
 
 
-#profile-button{
-    background: white;
-    margin-top: 5px;
-    font-size: 20px;
-    vertical-align: middle;
+#top-bar{
     text-align: center;
-    border-radius: 10px;
-    border: 2px solid #00BFFF;
-    padding: 5px;
-    height: auto;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-#profile-button li{
-    list-style-type: none;
+#top-bar ul{
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color:#333;
+    text-align: center;
+    list-style: none;
 }
 
+#top-bar ul li{
+    display: inline-block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#top-bar ul li a{
+    color:white;
+    text-align: center;
+    padding:14px 16px;
+    text-decoration: none;
+}
+
+#top-bar ul li a:hover {
+    background-color: #111;
+}
+
+#rank-friends{
+    text-align: center;
+    list-style-position: inside;
+}
+
+#rank-friends li{
+    
+}
 .content .upload.floating-button {
 	position: absolute;
 	left: 10px;
@@ -113,6 +135,23 @@ div.scroll
 {
     width:100%;
     overflow: scroll;
+}
+
+#profile-button{
+    background: white;
+    margin-top: 5px;
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #00BFFF;
+    padding: 5px;
+    height: auto;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+#profile-button li{
+    list-style-type: none;
 }
 
 .button {
