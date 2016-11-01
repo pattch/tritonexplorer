@@ -59,6 +59,22 @@ html
 }
 
 
+#profile-button{
+    background: white;
+    margin-top: 5px;
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #00BFFF;
+    padding: 5px;
+    height: auto;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+#profile-button li{
+    list-style-type: none;
+}
 
 .content .upload.floating-button {
 	position: absolute;
@@ -95,7 +111,7 @@ html
 
 div.scroll
 {
-    width:360px;
+    width:100%;
     overflow: scroll;
 }
 
