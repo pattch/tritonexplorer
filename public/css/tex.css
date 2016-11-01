@@ -277,8 +277,8 @@ div.scroll
 }
 
 .footer a.nav-button {
+    border-radius: 10px;
   text-align: center;
-	color: #eee;
 	-webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -291,5 +291,5 @@ div.scroll
 }
 
 .footer a.nav-button:hover {
-	color: #aaa;
+	background-color: #191970;
 }
