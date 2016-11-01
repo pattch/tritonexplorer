@@ -40,7 +40,7 @@ body{
 }
 
 .header {
-    display: inline-block;
+    position:relative;
 	color: #fff;
   /*
   075F87
@@ -51,12 +51,23 @@ body{
 	font-weight:900;
     font-size: 1.5em;
 	font-family: sans-serif;
-	padding-top: 10px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+p.header
+{
+    padding: 10px;
+    position:absolute;
+    right:0;
+	font-weight:900;
+    font-size: 1.5em;
+	font-family: sans-serif;
     text-shadow: 2px 2px 4px #000000;
 }
 
 #ranking-clock{
-    margin-top: 0px;
+    float:right;
+    margin-top: 10px;
     margin-right: 30px;
 }
 
