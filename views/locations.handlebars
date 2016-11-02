@@ -4,12 +4,13 @@
 <head>
 	<title>Triton Explorer</title>
 	<link href="/css/tex.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 
 <body>
 	<div class="header vert-bg">
         <p class="header">Triton Explorer</p>
+				<button class="login" onclick="openlogin()">log in</button>
+				<button class="register" onclick="openregister()">Register</button>
 	</div>
 
 	<div class="content">
@@ -43,18 +44,45 @@
 		<div class="info container hidden">
 			<h3>{{locations_to_show.name}}</h3>
 			<p class="description">Description: {{locations_to_show.description}}</p>
-			<p class="tags">Tags: {{#each locations_to_show.tags}}<span class="tag">{{this}}</span>{{/each}}</p>
+			<p class="tags">Tags:</p>
 			<div class="extra-info">
-				<span class="rating">Rating: {{locations_to_show.rating}}</span>
+				<span class="rating">Rating: {{location_to_show.rating}}</span>
 				<span class="location">
 					Location:
-					<span class="lat">{{{locations_to_show.lat}}}</span>
-					<span class="lng">{{locations_to_show.lng}}</span>
+					<span class="lat">{{{location_to_show.lat}}}</span>
+					<span class="lng">{{location_to_show.lng}}</span>
 				</span>
 			</div>
 		</div>
 	</div>
-
+	<!--Login form-->
+	<div  id="loginform" class="loginbox hidden">
+		<form action="/" method="post"> <!--need to change action-->
+				<div>
+				<center>Login</center>
+				username/email:<input type="text"><br>
+				passward:<input type="text"><br>
+				<center><input id="login-submit" type="button"  value="login"/>
+				<input id="login-cancel" type="button" onclick="hidelogin()" value="cancel"/></center>
+			</div>
+		</form>
+	</div>
+	<!--Register form-->
+	<div  id="registerform" class="registerbox hidden">
+		<form action="/" method="post"> <!--need to change action-->
+				<div>
+				<center>Register</center>
+				First name:<input type="text"><br>
+				Last name:<input type="text"><br>
+				College:<input type="text"><br>
+				email:<input type="text"><br>
+				password:<input type="text"><br>
+				confirm password:<input type="text"><br>
+				<center><input id="login-submit" type="button"  value="register"/>
+				<input id="login-cancel" type="button" onclick="hideregister()" value="cancel"/></center>
+			</div>
+		</form>
+	</div>
 	<div class="footer vert-bg">
 		<a  class="nav-button" href="/objective/">
             <img src="/images/objectives.png" style="width:60px; height=60px">
@@ -80,10 +108,10 @@
 		};
 		console.log(searchable_titles);
 	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/map-control.js"></script>
 	<script src="/js/location.js"></script>
+	<script src="/js/popup.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB82M8lTcnbfwp8lvbLN1Q30LLWAX2I-zE&libraries=places&callback=initMap"></script>
 </body>
 </html>
