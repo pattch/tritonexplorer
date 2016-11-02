@@ -2,13 +2,13 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
-	initializePage();
+	initializeMapPage();
 })
 
 /*
  * Function that is called when the document is ready.
  */
-function initializePage() {
+function initializeMapPage() {
 	// add any functionality and listeners you want here
 	$('.content .upload.floating-button, .content .upload.container .button-red').on('click', function(e) {
 		$('.content .upload.container').toggleClass('hidden');

@@ -8,6 +8,7 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
+global.loaded_locations = require('./public/js/locations.json');
 var index = require('./routes/index');
 // Example route
 // var user = require('./routes/user');
@@ -15,6 +16,7 @@ var about = require('./routes/about');
 var ranking = require('./routes/ranking');
 var objective = require('./routes/objective');
 var recommendations = require('./routes/recommendations');
+var locations = require('./routes/locations');
 
 var app = express();
 
@@ -43,7 +45,11 @@ if ('development' == app.get('env')) {
 // Home page
 app.get('/', index.view);
 // Route for adding a new location
-app.post('/', index.location)
+app.post('/', index.location);
+// Route for showing a specific location by id
+app.get('/locations/id/:id', locations.view_by_id);
+// Route for showing a specific location by name
+app.get('/locations/name/:name', locations.view_by_name);
 
 // About Me Page
 app.get('/about/', about.view);

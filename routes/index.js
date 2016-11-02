@@ -2,11 +2,11 @@
 /*
  * GET home page.
  */
-var locations = require('../public/js/locations.json');
+// var loaded_locations = require('../public/js/locations.json');
 
 exports.view = function(req, res){
-  res.render('index', locations);
-  console.log(locations);
+  res.render('index', loaded_locations);
+  console.log(loaded_locations);
 };
 
 exports.location = function(req, res) {
@@ -16,7 +16,7 @@ exports.location = function(req, res) {
 		rating = body.rating,
 		description = body.description;
 
-	var id = locations.length + 1;
+	var id = loaded_locations.locations.length + 1;
 
 	var location = {
 		"id": id,
@@ -25,8 +25,8 @@ exports.location = function(req, res) {
 		"rating": rating,
 		"description": description
 	};
-	locations.locations.push(location)
-	console.log(locations);
+	loaded_locations.locations.push(location)
+	console.log(loaded_locations);
 
-	res.render('index', locations);
+	res.render('index', loaded_locations);
 }
