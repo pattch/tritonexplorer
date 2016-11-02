@@ -270,7 +270,28 @@ div.scroll
     text-decoration: none;
     color: black;
 }
-
+.login {
+	position:fixed;
+	left:10px;
+	top:10px;
+	border-radius: 10px;
+	background-color: white;
+	color:black;
+	height:50px;
+	width:70px;
+	font-size:15px;
+}
+.register {
+	position:fixed;
+	left:90px;
+	top:10px;
+	border-radius: 10px;
+	background-color: white;
+	color:black;
+	height:50px;
+	width:70px;
+	font-size:15px;
+}
 .button {
   position: relative;
   display: inline-block;
