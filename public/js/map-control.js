@@ -22,6 +22,8 @@ function initializeMapPage() {
 		e.preventDefault();
 	});
 
+    var searchBox = $('#pac-input');
+    initSearch(searchBox);
 	// console.log(searchable_titles);
 
 	// $('#add-location').on('click', function(e) {
@@ -55,8 +57,19 @@ function initMap() {
 	// map.data.loadGeoJson('./js/map.geojson');
 
 	var input = document.getElementById('pac-input');
-    var searchBox = new google.maps.places.SearchBox(input);
+    // var searchBox = new google.maps.places.SearchBox(input);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+}
+
+function onSearchSelect(event, ui) {
+	console.log(event);
+}
+
+function initSearch(searchBox) {
+	searchBox.autocomplete({
+		source: searchable_titles,
+		select: onSearchSelect(event, {})
+	});
 }
 
 // Get the GPS data from the browser, if it supports GPS data.
