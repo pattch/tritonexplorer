@@ -356,6 +356,10 @@ div.scroll
 	border-color: #4d90fe;
 }
 
+.pac-container {
+  display:none;
+}
+
 .footer {
 	/*background: url(https://www.ucsd.edu/common/cwp/active-cherry/img/bg.jpg) repeat-x;*/
 	height: 12%;

@@ -22,7 +22,7 @@ function initializeMapPage() {
 		e.preventDefault();
 	});
 
-	console.log(searchable_titles);
+	// console.log(searchable_titles);
 
 	// $('#add-location').on('click', function(e) {
 	// 	console.log('Adding Location');

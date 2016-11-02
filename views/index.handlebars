@@ -4,6 +4,7 @@
 <head>
 	<title>Triton Explorer</title>
 	<link href="/css/tex.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 
 <body>
@@ -57,7 +58,8 @@
 	<script>
 		var searchable_titles = [{{#each locations}}"{{name}}",{{/each}}];
 	</script>
-	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="/js/map-control.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB82M8lTcnbfwp8lvbLN1Q30LLWAX2I-zE&libraries=places&callback=initMap"></script>
 </body>
