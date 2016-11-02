@@ -68,7 +68,15 @@ function onSearchSelect(event, ui) {
 function initSearch(searchBox) {
 	searchBox.autocomplete({
 		source: searchable_titles,
-		select: onSearchSelect(event, {})
+		select: function(event, ui) {
+			// console.log(ui.item.label);
+			var name = ui.item.label;
+			var id = location_id_by_title[name];
+			// console.log(id);
+			var url = "/locations/id/" + id;
+			location.href=url;
+
+		}
 	});
 }
 
