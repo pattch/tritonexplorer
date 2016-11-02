@@ -10,8 +10,14 @@ $(document).ready(function() {
  */
 function initializeMapPage() {
 	// add any functionality and listeners you want here
-	$('.content .upload.floating-button, .content .upload.container .button-red').on('click', function(e) {
-		$('.content .upload.container').toggleClass('hidden');
+	$('.content .upload.floating-button').on('click', function(e) {
+		$('.content .upload.container').fadeIn(100);
+		console.log("Upload Clicked");
+		e.preventDefault();
+	});
+    
+    $('.content .upload.container .button-red').on('click', function(e) {
+		$('.content .upload.container').hide();
 		console.log("Upload Clicked");
 		e.preventDefault();
 	});
@@ -24,6 +30,17 @@ function initializeMapPage() {
 	// 	e.preventDefault();
 	// });
 }
+
+$(document).mouseup(function (e)
+{
+    var container = $('.content .upload.container');
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.fadeOut(100);
+    }
+});
 
 // Called by google maps' callback
 function initMap() {

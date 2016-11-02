@@ -159,8 +159,10 @@ html
     list-style-position: inside;
 }
 
-#rank-friends li{
-    
+#rank-colleges{
+    position: relative;
+    text-align: center;
+    list-style-position: inside;
 }
 
 .content .upload.floating-button {
