@@ -10,13 +10,22 @@
 	<div class="header vert-bg">
         <p class="header">Ranking</p>
         <a href="/ranking/">
-            <img id="header-icon" src="/images/clock.png" alt="Time" style="width:40px; height:40px"/>
+            <img id="ranking-icon" class="header-icon" src="/images/clock.png" alt="Time" style="width:40px; height:40px"/>
         </a>
 	</div>
     
+    
 	<div class="content scroll">
         <div id="top-bar">
-            <ul>
+            <div id="sort-by-time"  class="hidden">
+                <ul>
+                    <h4>Sort by:</h4>
+                    <li><a href="/ranking/">Daily</a></li>
+                    <li><a href="/ranking/">Weekly</a></li>
+                    <li><a href="/ranking/">Total</a></li>
+            </div>
+            
+            <ul id="top-bar-nav">
                 <li><a href="/ranking/">Friends</a></li>
                 <li><a href="/ranking/">Colleges</a></li>
             </ul>
@@ -55,5 +64,6 @@
         </a>
 	</div>
 	<script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/ranking.js"></script>
 </body>
 </html>

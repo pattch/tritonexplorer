@@ -65,7 +65,7 @@ p.header
     text-shadow: 2px 2px 4px #000000;
 }
 
-#header-icon{
+img.header-icon{
     float:right;
     margin-top: 10px;
     margin-right: 30px;
@@ -76,12 +76,58 @@ html
     height: 100%;
 }
 
+#sort-by-time{
+    z-index: 1;
+    background-color: white;
+    color: black;
+    position:absolute;
+    right:0;
+    top:0;
+    text-align: center;
+    border: 2px solid grey;
+}
 
+#sort-by-time ul{
+    padding-top:10px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    list-style: none;
+    line-height: 2em;
+}
+
+#sort-by-time ul li{
+    border-bottom: 1px solid rgba(0,0,0,0);
+    border-bottom-width: thick;
+    
+    -webkit-transition: border-color .25s linear; /* Saf3.2+, Chrome */
+       -moz-transition: border-color .25s linear; /* FF3.7+ */
+         -o-transition: border-color .25s linear; /* Opera 10.5 */
+            transition: border-color .25s linear;
+}
+
+#sort-by-time ul li:hover{
+    border-color: grey;
+}
+
+#sort-by-time ul h4{
+    font-family: fantasy;
+}
+
+#sort-by-time ul li a{
+    color: black;
+    font-weight: 600;
+    font-family: sans-serif;
+    text-decoration: none;
+}
 #top-bar{
+    top: 10%;
+    left: 0;
+    right:0;
     text-align: center;
 }
 
-#top-bar ul{
+#top-bar-nav{
     margin:0;
     padding:0;
     overflow:hidden;
@@ -90,24 +136,25 @@ html
     list-style: none;
 }
 
-#top-bar ul li{
+#top-bar-nav li{
     display: inline-block;
     padding-top: 8px;
     padding-bottom: 8px;
 }
 
-#top-bar ul li a{
+#top-bar-nav li a{
     color:white;
     text-align: center;
     padding:14px 16px;
     text-decoration: none;
 }
 
-#top-bar ul li a:hover {
+#top-bar-nav li a:hover {
     background-color: #111;
 }
 
 #rank-friends{
+    position: relative;
     text-align: center;
     list-style-position: inside;
 }
