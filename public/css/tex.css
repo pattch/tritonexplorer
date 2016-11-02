@@ -99,7 +99,7 @@ html
 #sort-by-time ul li{
     border-bottom: 1px solid rgba(0,0,0,0);
     border-bottom-width: thick;
-    
+
     -webkit-transition: border-color .25s linear; /* Saf3.2+, Chrome */
        -moz-transition: border-color .25s linear; /* FF3.7+ */
          -o-transition: border-color .25s linear; /* Opera 10.5 */
@@ -164,7 +164,21 @@ html
     text-align: center;
     list-style-position: inside;
 }
-
+#best-spots{
+		font-size: 40px;
+		font-style: italic;
+		font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+    text-align:justify;
+    list-style-position: inside;
+}
+#toleft{
+	position:relative;
+	left:30px;
+}
+#toright{
+	position:relative;
+	right:30px;
+}
 .content .upload.floating-button {
 	position: absolute;
 	left: 10px;
