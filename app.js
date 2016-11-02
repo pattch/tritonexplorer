@@ -45,7 +45,7 @@ if ('development' == app.get('env')) {
 // Home page
 app.get('/', index.view);
 // Route for adding a new location
-app.post('/', index.location);
+app.post('/', locations.add);
 // Route for showing a specific location by id
 app.get('/locations/id/:id', locations.view_by_id);
 // Route for showing a specific location by name

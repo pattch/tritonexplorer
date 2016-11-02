@@ -18,6 +18,32 @@ exports.view_by_id = function(req, res){
 	console.log(data);
 };
 
+exports.add = function(req, res) {
+	var body = req.body;
+	var title = body.title,
+		tags = body.tags,
+		rating = body.rating,
+		description = body.description;
+
+	var id = loaded_locations.locations.length + 1;
+
+	var location = {
+		"id": id,
+		"name": title,
+		"tags": tags,
+		"rating": rating,
+		"description": description
+	};
+	loaded_locations.locations.push(location)
+	// console.log(loaded_locations);
+
+  	var locations_to_show = location;
+  	var data = {locations_to_show : locations_to_show,
+  		locations : loaded_locations.locations};
+
+	res.render('locations', data);
+}
+
 // TODO: Implement this.
 exports.view_by_name = function(req, res) {
 	var location_name = req.params.name;
