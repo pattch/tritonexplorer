@@ -51,6 +51,7 @@ app.get('/locations/id/:id', locations.view_by_id);
 // Route for showing a specific location by name
 app.get('/locations/name/:name', locations.view_by_name);
 
+
 // About Me Page
 app.get('/about/', about.view);
 
