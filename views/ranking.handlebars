@@ -12,9 +12,24 @@
         <a href="/ranking/">
             <img id="ranking-icon" class="header-icon" src="/images/clock.png" alt="Time" style="width:40px; height:40px"/>
         </a>
+				<button class="login" onclick="openlogin()">log in</button>
+				<button class="register">Register</button>
 	</div>
-    
-    
+
+	<div  id="loginform" class="hidden">
+	<!--Login form-->
+		<form action="/" method="post"> <!--need to change action-->
+			<div>
+			<center>Login</center>
+			username/email:<input type="text"><br>
+			passward<input type="text"><br>
+			<input type="button"  value="login"/>
+			<input type="button" onclick="hidelogin()" value="cancel"/>
+		</div>
+		</form>
+	<!--Register form-->
+
+	</div>
 	<div class="content scroll">
         <div id="top-bar">
             <div id="sort-by-time"  class="hidden">
@@ -24,13 +39,13 @@
                     <li><a href="/ranking/">Weekly</a></li>
                     <li><a href="/ranking/">Total</a></li>
             </div>
-            
+
             <ul id="top-bar-nav">
                 <li id="see-friends"><a href="/ranking/">Friends</a></li>
                 <li  id="see-colleges"><a href="/ranking/">Colleges</a></li>
             </ul>
         </div>
-        
+
         <div id="rank-colleges" class="hidden">
             <ol>
                 <li><img src="/images/profile_man.png" style="width:60px; height=60px"/>Warren College</li>
@@ -41,7 +56,7 @@
                 <li><img src="/images/profile_man.png" style="width:60px; height=60px"/>Revelle College</li>
             </ol>
         </div>
-            
+
         <div id="rank-friends">
             <ol>
                 <li><img src="/images/profile_man.png" style="width:60px; height=60px"/>Sample Name</li>
@@ -57,7 +72,7 @@
             </ol>
         </div>
 	</div>
-        
+
 	<div class="footer vert-bg">
 		<a  class="nav-button" href="/objective/">
             <img src="/images/objectives.png" style="width:60px; height=60px">
@@ -77,5 +92,6 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="/js/ranking.js"></script>
+		<script src="/js/popup.js"></script>
 </body>
 </html>
