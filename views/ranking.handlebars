@@ -12,11 +12,24 @@
         <a href="/ranking/">
             <img id="ranking-icon" class="header-icon" src="/images/clock.png" alt="Time" style="width:40px; height:40px"/>
         </a>
-				<button class="login">log in</button>
+				<button class="login" onclick="openlogin()">log in</button>
 				<button class="register">Register</button>
 	</div>
 
+	<div  id="loginform" class="hidden">
+	<!--Login form-->
+		<form action="/" method="post"> <!--need to change action-->
+			<div>
+			<center>Login</center>
+			username/email:<input type="text"><br>
+			passward<input type="text"><br>
+			<input type="button"  value="login"/>
+			<input type="button" onclick="hidelogin()" value="cancel"/>
+		</div>
+		</form>
+	<!--Register form-->
 
+	</div>
 	<div class="content scroll">
         <div id="top-bar">
             <div id="sort-by-time"  class="hidden">
@@ -79,5 +92,6 @@
 	</div>
 	<script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/ranking.js"></script>
+		<script src="/js/popup.js"></script>
 </body>
 </html>
