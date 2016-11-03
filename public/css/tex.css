@@ -165,19 +165,15 @@ html
     list-style-position: inside;
 }
 #best-spots{
-		font-size: 40px;
-		font-style: italic;
+		font-size: 30px;
 		font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
-    text-align:justify;
+    text-align:center;
     list-style-position: inside;
 }
-#toleft{
-	position:relative;
-	left:30px;
-}
-#toright{
-	position:relative;
-	right:30px;
+
+#best-spots-border{
+		margin-top:30px;
+		margin-bottom: 50px;
 }
 
 #login-submit{
