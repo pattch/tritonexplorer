@@ -4,5 +4,6 @@
  */
 
 exports.view = function(req, res){
-  res.render('recommendations');
+	var locations = loaded_locations.locations;
+	res.render('recommendations', {locations : locations});
 };

@@ -171,7 +171,7 @@ html
     list-style-position: inside;
 }
 
-#best-spots-border{
+.best-spots-border{
 		margin-top:30px;
 		margin-bottom: 50px;
 }
