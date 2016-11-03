@@ -52,7 +52,7 @@ function changeFriendStatus(btn,value){
         friendCount=1;
     }
     else{
-        property.value = "unfriend"
+        property.value = "Add friend"
         property.style.backgroundColor = "#FFAE33"
         friendCount=0;
     }
