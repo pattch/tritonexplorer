@@ -38,8 +38,8 @@
 				<div id="profile-button" onclick="openChangePassword()">
                     Change Password
 				</div>
-				<div id="profile-button">
-                    <a href="/about/">Help &amp; Support</a>
+				<div id="profile-button" onclick="openHelp()">
+                    Help &amp; Support
 				</div>
         <br>
         <br>
@@ -125,8 +125,19 @@
           <br>
           &emsp;
           </br>
+
         <center><input id="login-submit" type="button" onclick="hideManageFriend()" value="confirm"/>
         <input id="login-cancel" type="button" onclick="hideManageFriend()" value="cancel"/></center>
+      </div>
+    </form>
+  </div>
+  <!--Help and Support form-->
+  <div  id="helpForm" class="helpBox hidden">
+    <form action="/" method="post"> <!--need to change action-->
+        <div>
+        <center>Help and Support</center>
+
+        <center><input id="login-submit" type="button" onclick="hideHelp()" value="OK"/>
       </div>
     </form>
   </div>
