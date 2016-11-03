@@ -28,3 +28,15 @@ function changeColor(btn,color){
         count=0;
     }
 }
+var dislike_count=1;
+function dislikeChangeColor(btn,color){
+    var property = document.getElementById(btn);
+    if (dislike_count == 0){
+        property.style.backgroundColor = "#C0C0C0"
+        dislike_count=1;
+    }
+    else{
+        property.style.backgroundColor = "#FFAE33"
+        dislike_count=0;
+    }
+}

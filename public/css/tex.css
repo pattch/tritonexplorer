@@ -295,11 +295,16 @@ html
 	background-color: #C0C0C0;
 	color: white;
 	height:30px;
-	width:40px;
+	width:50px;
 	border-radius: 10px;
-	font-size=20px;
 }
-
+.dislike{
+	background-color: #C0C0C0;
+	color: white;
+	height:30px;
+	width:50px;
+	border-radius: 10px;
+}
 div.scroll
 {
     width:100%;
