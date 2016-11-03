@@ -52,7 +52,7 @@ function changeFriendStatus(btn,value){
         friendCount=1;
     }
     else{
-        property.value = "unfriend"
+        property.value = "Add friend"
         property.style.backgroundColor = "#FFAE33"
         friendCount=0;
     }
@@ -64,6 +64,7 @@ function changeFriendStatus(btn,value){
 
 
 function openChangePassword(){
+  document.getElementById('manageFriendForm').style.display="none";
   document.getElementById('changePasswordForm').style.display="block";
 }
 
@@ -72,9 +73,17 @@ function hideChangePassword(){
 }
 
 function openManageFriend(){
+  document.getElementById('changePasswordForm').style.display="none";
   document.getElementById('manageFriendForm').style.display="block";
 }
 
 function hideManageFriend(){
+  document.getElementById('changePasswordForm').style.display="none";
   document.getElementById('manageFriendForm').style.display="none";
+}
+function openHelp(){
+  document.getElementById('helpForm').style.display="display";
+}
+function hideHelp(){
+  document.getElementById('helpForm').style.display="none";
 }
