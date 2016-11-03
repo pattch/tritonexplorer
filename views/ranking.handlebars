@@ -45,16 +45,12 @@
 
         <div id="rank-friends">
             <ol>
-                <li><img src="/images/profile_man.png" style="width:60px; height=60px"/>Sample Name</li>
-                <li><img src="/images/profile_man.png" style="width:60px; height=60px"/>Sample Name</li>
-                <li><img src="/images/profile_man.png" style="width:60px; height=60px"/>Sample Name</li>
-                <li><img src="/images/profile_man.png" style="width:60px; height=60px"/>Sample Name</li>
-                <li><img src="/images/profile_man.png" style="width:60px; height=60px"/>John Smith</li>
-                <li><img src="/images/profile_man.png" style="width:60px; height=60px"/>Sample Name</li>
-                <li><img src="/images/profile_man.png" style="width:60px; height=60px"/>Sample Name</li>
-                <li><img src="/images/profile_man.png" style="width:60px; height=60px"/>Sample Name</li>
-                <li><img src="/images/profile_man.png" style="width:60px; height=60px"/>Sample Name</li>
-                <li><img src="/images/profile_man.png" style="width:60px; height=60px"/>Sample Name</li>
+                {{#each accounts}}
+                    <li>
+                        <img src="{{img-url}}" width="60px; height=60px" />{{name}}<br />
+                        Experience: {{experience}}
+                    </li>
+                {{/each}}
             </ol>
         </div>
 	</div>

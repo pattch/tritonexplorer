@@ -9,6 +9,7 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 global.loaded_locations = require('./public/js/locations.json');
+global.loaded_accounts = require('./public/js/accounts.json');
 var index = require('./routes/index');
 // Example route
 // var user = require('./routes/user');

@@ -1,0 +1,49 @@
+{
+	"accounts": [
+		{
+			"id": 1,
+			"name": "John Smith",
+			"locations": [],
+			"experience": 200,
+			"missions": [],
+			"college": 0,
+			"img-url": "/images/profile_man.png"
+		},
+		{
+			"id": 2,
+			"name": "Sample Name",
+			"locations": [],
+			"experience": 500,
+			"missions": [],
+			"college": 1,
+			"img-url": "/images/profile_man.png"
+		},
+		{
+			"id": 3,
+			"name": "Another One",
+			"locations": [],
+			"experience": 500,
+			"missions": [],
+			"college": 2,
+			"img-url": "/images/profile_man.png"
+		},
+		{
+			"id": 4,
+			"name": "Jane Doe",
+			"locations": [],
+			"experience": 150,
+			"missions": [],
+			"college": 1,
+			"img-url": "/images/profile_man.png"
+		},
+		{
+			"id": 5,
+			"name": "John Mayer",
+			"locations": [],
+			"experience": 0,
+			"missions": [],
+			"college": 4,
+			"img-url": "/images/profile_man.png"
+		}
+	]
+}
