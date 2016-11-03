@@ -35,8 +35,8 @@
                 <div id="profile-button">
                     <a href="/about/">Manage Friends</a>
                 </div>
-				<div id="profile-button">
-                    <a href="/about/">Change Password</a>
+				<div id="profile-button" onclick="openChangePassword()">
+                    Change Password
 				</div>
 				<div id="profile-button">
                     <a href="/about/">Help &amp; Support</a>
@@ -78,6 +78,20 @@
 			</div>
 		</form>
 	</div>
+
+  <!--Change Password form-->
+  <div  id="changePasswordForm" class="changePasswordBox hidden">
+    <form action="/" method="post"> <!--need to change action-->
+        <div>
+        <center>Change Password</center>
+        Old Password:<input type="text"><br>
+        New Password:<input type="text"><br>
+        Confirm New Password:<input type="text"><br>
+        <center><input id="login-submit" type="button" onclick="hideChangePassword()" value="submit"/>
+        <input id="login-cancel" type="button" onclick="hideChangePassword()" value="cancel"/></center>
+      </div>
+    </form>
+  </div>
 
   <div class="footer vert-bg">
 		<a  class="nav-button" href="/objective/">

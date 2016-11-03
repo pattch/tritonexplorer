@@ -40,3 +40,11 @@ function dislikeChangeColor(btn,color){
         dislike_count=0;
     }
 }
+
+function openChangePassword(){
+  document.getElementById('changePasswordForm').style.display="block";
+}
+
+function hideChangePassword(){
+  document.getElementById('changePasswordForm').style.display="none";
+}
