@@ -32,8 +32,8 @@
     </div>
         <br>
     <div>
-                <div id="profile-button">
-                    <a href="/about/">Manage Friends</a>
+                <div id="profile-button" onclick="openManageFriend()">
+                    Manage Friends
                 </div>
 				<div id="profile-button" onclick="openChangePassword()">
                     Change Password
@@ -89,6 +89,41 @@
         Confirm New Password:<input type="text"><br>
         <center><input id="login-submit" type="button" onclick="hideChangePassword()" value="submit"/>
         <input id="login-cancel" type="button" onclick="hideChangePassword()" value="cancel"/></center>
+      </div>
+    </form>
+  </div>
+
+  <!--Manage Friend form-->
+  <div  id="manageFriendForm" class="manageFriendBox hidden">
+    <form action="/" method="post"> <!--need to change action-->
+        <div>
+        <center>Manage Your Friends</center>
+          <br>
+            &emsp;&emsp;
+            <img src="/images/friend1.jpeg" style="width:150px; height=150px">
+            <!--friend and unfriend button for friend1-->
+            <input type="button" id="friend1" onclick="changeFriendStatus('friend1','✓friend')";
+            value="✓friend" class="friendbutton">
+            &emsp;&emsp;&emsp;&emsp;&emsp;
+            <img src="/images/friend2.jpg" style="width:150px; height=150px">
+            <!--friend and unfriend button for friend2-->
+            <input type="button" id="friend2" onclick="changeFriendStatus('friend2','✓friend')";
+            value="✓friend" class="friendbutton">
+          </br>
+          <br>
+          &emsp;&emsp;
+          <img src="/images/friend3.jpg" style="width:150px; height=150px">
+          <!--friend and unfriend button for friend3-->
+          <input type="button" id="friend3" onclick="changeFriendStatus('friend3','✓friend')";
+          value="✓friend" class="friendbutton">
+          &emsp;&emsp;&emsp;&emsp;&emsp;
+          <img src="/images/friend4.jpg" style="width:150px; height=150px">
+          <!--friend and unfriend button for friend4-->
+          <input type="button" id="friend4" onclick="changeFriendStatus('friend4','✓friend')";
+          value="✓friend" class="friendbutton">
+          </br>
+        <center><input id="login-submit" type="button" onclick="hideManageFriend()" value="confirm"/>
+        <input id="login-cancel" type="button" onclick="hideManageFriend()" value="cancel"/></center>
       </div>
     </form>
   </div>

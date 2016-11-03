@@ -41,10 +41,40 @@ function dislikeChangeColor(btn,color){
     }
 }
 
+
+
+var friendCount=1;
+function changeFriendStatus(btn,value){
+    var property = document.getElementById(btn);
+    if (friendCount == 0){
+        property.value = "✓friend"
+        property.style.backgroundColor ="#7892c2"
+        friendCount=1;
+    }
+    else{
+        property.value = "unfriend"
+        property.style.backgroundColor = "#FFAE33"
+        friendCount=0;
+    }
+
+}
+
+
+
+
+
 function openChangePassword(){
   document.getElementById('changePasswordForm').style.display="block";
 }
 
 function hideChangePassword(){
   document.getElementById('changePasswordForm').style.display="none";
+}
+
+function openManageFriend(){
+  document.getElementById('manageFriendForm').style.display="block";
+}
+
+function hideManageFriend(){
+  document.getElementById('manageFriendForm').style.display="none";
 }
