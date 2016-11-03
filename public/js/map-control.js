@@ -1,5 +1,8 @@
 'use strict';
 
+var searchable_titles = [];
+var location_id_by_title = {};
+
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializeMapPage();
@@ -65,7 +68,28 @@ function onSearchSelect(event, ui) {
 	console.log(event);
 }
 
+function getLocations() {
+	// var searchable_titles = [];
+	// var location_id_by_title = {};
+	var locationsURL = "/locations/all/";
+	$.ajax({
+	  dataType: "json",
+	  url: locationsURL,
+	  success: function(response) {
+	  	// console.log(response);
+	  	$.each(response, function(index, obj) {
+	  		var loc_name = obj['name'];
+	  		var loc_id = obj['id'];
+	  		searchable_titles.push(loc_name);
+	  		location_id_by_title[loc_name] = loc_id;
+	  	})
+	  }
+	});
+}
+
 function initSearch(searchBox) {
+	getLocations();
+
 	searchBox.autocomplete({
 		source: searchable_titles,
 		select: function(event, ui) {
@@ -75,7 +99,6 @@ function initSearch(searchBox) {
 			// console.log(id);
 			var url = "/locations/id/" + id;
 			location.href=url;
-
 		}
 	});
 }

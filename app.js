@@ -44,12 +44,15 @@ if ('development' == app.get('env')) {
 
 // Home page
 app.get('/', index.view);
+
 // Route for adding a new location
 app.post('/', locations.add);
 // Route for showing a specific location by id
 app.get('/locations/id/:id', locations.view_by_id);
 // Route for showing a specific location by name
 app.get('/locations/name/:name', locations.view_by_name);
+// Route for getting all locations as a JSON object
+app.get('/locations/all/', locations.all);
 
 
 // About Me Page

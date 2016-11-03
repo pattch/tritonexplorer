@@ -18,6 +18,7 @@ exports.view_by_id = function(req, res){
 	console.log(data);
 };
 
+// TODO: Break apart tags string into an array object so Handlebars can use it.
 exports.add = function(req, res) {
 	var body = req.body;
 	var title = body.title,
@@ -50,4 +51,10 @@ exports.view_by_name = function(req, res) {
 	// Get the location with name location_name from loaded_locations
 	res.render('locations', loaded_locations);
 	console.log(loaded_locations);
+}
+
+// Send a single JSON object containing all locations
+exports.all = function(req, res) {
+	console.log(loaded_locations.locations);
+	res.json(loaded_locations.locations);
 }
