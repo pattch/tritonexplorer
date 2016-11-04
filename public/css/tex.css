@@ -176,6 +176,36 @@ html
 		margin-bottom: 50px;
 }
 
+.recommendation {
+    font-size: 30px;
+    font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+    text-align:center;
+    list-style-position: inside;
+    margin-top:30px;
+    margin-bottom: 50px;
+    background-color: #eee;
+    padding: 30px 0px 30px 0px;
+}
+
+.recommendation .button {
+  width: auto;
+  height: auto;
+  padding: 5px 15px 5px 15px;
+  border-radius: 10px;
+}
+
+.recommendation .button.like.highlight {
+  background-color: #FFAE33;
+}
+
+.recommendation .button.dislike.highlight {
+  background-color: #F08080;
+}
+
+.recommendation p {
+  margin-top:20px;
+}
+
 #login-submit{
 	background-color:#7892c2;
 	border:1px solid #4e6096;

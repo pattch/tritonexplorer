@@ -13,10 +13,11 @@
 
 	<div class="content scroll" id="best-spots">
 		{{#each locations}}
-		<div class="best-spots-border">
-			<p><img src="{{img-url}}" height="300px" width="400px" border="1px" /></p>
-			<input type="button" id="like1" onclick="changeColor('like1','#C0C0C0')"; value="like" class="like">
-			<input type="button" id="dislike1" onclick="dislikeChangeColor('dislike1','#C0C0C0')"; value="dislike" class="dislike">
+		<div class="recommendation">
+			<img src="{{img-url}}" height="300px" width="400px" border="1px" />
+			<br />
+			<span class="button like">like</span>
+			<span class="button dislike">dislike</span>
 			<p>{{name}}</p>
 			<div  class="descriptionbox">
 				{{description}}

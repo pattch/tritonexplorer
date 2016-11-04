@@ -1,4 +1,6 @@
-$(document).ready(function(){
+$(document).ready(initializeMissionButtons);
+
+function initializeMissionButtons() {
 	var missions = $('.mission');
 	// console.log(accept_buttons);
 	missions.each(function(index) {
@@ -18,4 +20,4 @@ $(document).ready(function(){
 			decline.hide();
 		});
 	});
-});
+}
