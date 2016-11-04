@@ -23,9 +23,10 @@
             </div>
             <br />
             <center>
-                <a href="/"><button class="button button-green">Accept</button></a>
-                <a href="/"><button class="button button-red">Decline</button></a>
+                <a><button id="accept" class="button button-green">Accept</button></a>
+                <a><button id="decline" class="button button-red">Decline</button></a>
             </center>
+            <p id="ongoing">In progress...</p>
         </div>
         {{/each}}
 	</div>
@@ -51,5 +52,6 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="/js/popup.js"></script>
+    <script src="/js/objective.js"></script>
 </body>
 </html>

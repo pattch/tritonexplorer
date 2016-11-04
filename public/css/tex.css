@@ -205,10 +205,13 @@ html
     padding-left: 40px;
     padding-right: 40px;
     background-color: #328CC1;
-    display: block;
     width: 100%;
 }
 
+#ongoing{
+    display: none;
+    text-align: center;
+}
 .mission img{
     position: relative;
     width: 200px;
