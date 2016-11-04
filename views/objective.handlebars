@@ -7,15 +7,66 @@
 </head>
 
 <body>
+    <!--Header and header buttons-->
 	<div class="header vert-bg">
         <p class="header">Missions</p>
 				<button class="login" onclick="openlogin()">log in</button>
 				<button class="register" onclick="openregister()">Register</button>
 	</div>
-
-	<div class="content">
+    
+    
+        
+    
+    <!--Actual Objectives-->
+    <div class="content scroll">
+        <div class="mission">
+            <div>
+                <img src="/images/64_degrees.png"/>
+                <h2>Mission Sample 1</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, mei no utinam vocibus apeirian, senserit molestiae eum te. Has accommodare concludaturque ad. Pro affert viderer commune ei, ea illud expetendis interesset vix, id sit vidit munere molestie. Mei cu elit partem feugiat, sit errem constituam et. Debitis probatus pertinacia in nec, sed stet tantas an.
+                </p>
+            </div>
+            <br>
+            <center>
+                <a href="/"><button class="button button-green">Accept</button></a>
+                <a href="/"><button class="button button-red">Decline</button></a>
+            </center>
+        </div>
+        
+        <div class="mission">
+            <div>
+                <img src="/images/64_degrees.png"/>
+                <h2>Mission Sample 2</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, mei no utinam vocibus apeirian, senserit molestiae eum te. Has accommodare concludaturque ad. Pro affert viderer commune ei, ea illud expetendis interesset vix, id sit vidit munere molestie. Mei cu elit partem feugiat, sit errem constituam et. Debitis probatus pertinacia in nec, sed stet tantas an.
+                </p>
+            </div>
+            <br>
+            <center>
+                <a href="/"><button class="button button-green">Accept</button></a>
+                <a href="/"><button class="button button-red">Decline</button></a>
+            </center>
+        </div>
+        
+        <div class="mission">
+            <div>
+                <img src="/images/64_degrees.png"/>
+                <h2>Mission Sample 3</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, mei no utinam vocibus apeirian, senserit molestiae eum te. Has accommodare concludaturque ad. Pro affert viderer commune ei, ea illud expetendis interesset vix, id sit vidit munere molestie. Mei cu elit partem feugiat, sit errem constituam et. Debitis probatus pertinacia in nec, sed stet tantas an.
+                </p>
+            </div>
+            <br>
+            <center>
+                <a href="/"><button class="button button-green">Accept</button></a>
+                <a href="/"><button class="button button-red">Decline</button></a>
+            </center>
+        </div>
 	</div>
-	<!--Login form-->
+	
+    
+    <!--Login form-->
 	<div  id="loginform" class="loginbox hidden">
 		<form action="/" method="post"> <!--need to change action-->
 				<div>
@@ -27,7 +78,9 @@
 			</div>
 		</form>
 	</div>
-	<!--Register form-->
+	
+    
+    <!--Register form-->
 	<div  id="registerform" class="registerbox hidden">
 		<form action="/" method="post"> <!--need to change action-->
 				<div>
@@ -42,8 +95,10 @@
 				<input id="login-cancel" type="button" onclick="hideregister()" value="cancel"/></center>
 			</div>
 		</form>
-	</div>
-
+	</div>    
+    
+    
+    <!--Footer-->
 	<div class="footer vert-bg">
 		<a  class="nav-button active" href="/objective/">
             <img src="/images/objectives.png" style="width:60px; height=60px">
