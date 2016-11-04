@@ -1,12 +1,21 @@
 $(document).ready(function(){
-    $("#accept").click(function(){
-        $("#accept").hide();
-        $("#decline").hide();
-        $("#ongoing").fadeIn(200);
-        
-    });
-    $("#decline").click(function(){
-        $("#accept").hide();
-        $("#decline").hide();
-    });
+	var missions = $('.mission');
+	// console.log(accept_buttons);
+	missions.each(function(index) {
+		// console.log($(this));
+		var accept = $(this).find('.accept');
+		var decline = $(this).find('.decline');
+		var ongoing = $(this).find('.ongoing');
+
+		accept.click(function() {
+			accept.hide();
+			decline.hide();
+			ongoing.fadeIn(200);
+		});
+
+		decline.click(function() {
+			accept.hide();
+			decline.hide();
+		});
+	});
 });
