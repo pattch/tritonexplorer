@@ -82,7 +82,7 @@ function hideManageFriend(){
   document.getElementById('manageFriendForm').style.display="none";
 }
 function openHelp(){
-  document.getElementById('helpForm').style.display="display";
+  document.getElementById('helpForm').style.display="block";
 }
 function hideHelp(){
   document.getElementById('helpForm').style.display="none";
