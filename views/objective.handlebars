@@ -10,8 +10,6 @@
     <!--Header and header buttons-->
 	<div class="header vert-bg">
         <p class="header">Missions</p>
-				<button class="login" onclick="openlogin()">log in</button>
-				<button class="register" onclick="openregister()">Register</button>
 	</div>
     
     <!--Actual Objectives-->
@@ -31,38 +29,6 @@
         </div>
         {{/each}}
 	</div>
-	
-    
-    <!--Login form-->
-	<div  id="loginform" class="loginbox hidden">
-		<form action="/" method="post"> <!--need to change action-->
-				<div>
-				<center>Login</center>
-				username/email:<input type="text"><br>
-				passward:<input type="text"><br>
-				<center><input id="login-submit" type="button"  onclick="hidelogin()" value="login"/>
-				<input id="login-cancel" type="button" onclick="hidelogin()" value="cancel"/></center>
-			</div>
-		</form>
-	</div>
-	
-    
-    <!--Register form-->
-	<div  id="registerform" class="registerbox hidden">
-		<form action="/" method="post"> <!--need to change action-->
-				<div>
-				<center>Register</center>
-				First name:<input type="text"><br>
-				Last name:<input type="text"><br>
-				College:<input type="text"><br>
-				email:<input type="text"><br>
-				password:<input type="text"><br>
-				confirm password:<input type="text"><br>
-				<center><input id="login-submit" type="button" onclick="hideregister()" value="register"/>
-				<input id="login-cancel" type="button" onclick="hideregister()" value="cancel"/></center>
-			</div>
-		</form>
-	</div>    
     
     
     <!--Footer-->
