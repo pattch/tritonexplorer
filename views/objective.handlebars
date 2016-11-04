@@ -14,55 +14,22 @@
 				<button class="register" onclick="openregister()">Register</button>
 	</div>
     
-    
-        
-    
     <!--Actual Objectives-->
     <div class="content scroll">
+        {{#each missions}}
         <div class="mission">
             <div>
-                <img src="/images/64_degrees.png"/>
-                <h2>Mission Sample 1</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, mei no utinam vocibus apeirian, senserit molestiae eum te. Has accommodare concludaturque ad. Pro affert viderer commune ei, ea illud expetendis interesset vix, id sit vidit munere molestie. Mei cu elit partem feugiat, sit errem constituam et. Debitis probatus pertinacia in nec, sed stet tantas an.
-                </p>
+                <img src="{{img-url}}" />
+                <h2>{{name}}</h2>
+                <p>{{description}}</p>
             </div>
-            <br>
+            <br />
             <center>
                 <a href="/"><button class="button button-green">Accept</button></a>
                 <a href="/"><button class="button button-red">Decline</button></a>
             </center>
         </div>
-        
-        <div class="mission">
-            <div>
-                <img src="/images/64_degrees.png"/>
-                <h2>Mission Sample 2</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, mei no utinam vocibus apeirian, senserit molestiae eum te. Has accommodare concludaturque ad. Pro affert viderer commune ei, ea illud expetendis interesset vix, id sit vidit munere molestie. Mei cu elit partem feugiat, sit errem constituam et. Debitis probatus pertinacia in nec, sed stet tantas an.
-                </p>
-            </div>
-            <br>
-            <center>
-                <a href="/"><button class="button button-green">Accept</button></a>
-                <a href="/"><button class="button button-red">Decline</button></a>
-            </center>
-        </div>
-        
-        <div class="mission">
-            <div>
-                <img src="/images/64_degrees.png"/>
-                <h2>Mission Sample 3</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, mei no utinam vocibus apeirian, senserit molestiae eum te. Has accommodare concludaturque ad. Pro affert viderer commune ei, ea illud expetendis interesset vix, id sit vidit munere molestie. Mei cu elit partem feugiat, sit errem constituam et. Debitis probatus pertinacia in nec, sed stet tantas an.
-                </p>
-            </div>
-            <br>
-            <center>
-                <a href="/"><button class="button button-green">Accept</button></a>
-                <a href="/"><button class="button button-red">Decline</button></a>
-            </center>
-        </div>
+        {{/each}}
 	</div>
 	
     
