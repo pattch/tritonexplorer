@@ -38,14 +38,25 @@ function initializeMapPage() {
 
 $(document).mouseup(function (e)
 {
-    var container = $('.content .upload.container');
-
-    if (!container.is(e.target) // if the target of the click isn't the container...
-        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    var container1 = $('.content .upload.container');
+    var container2 = $('.info .floating-button');
+    
+    if (!container1.is(e.target) // if the target of the click isn't the container...
+        && container1.has(e.target).length === 0) // ... nor a descendant of the container
     {
-        container.fadeOut(100);
+        container1.fadeOut(100);
+    }
+    else
+    {
+        if (!container2.is(e.target) // if the target of the click isn't the container...
+            && container2.has(e.target).length === 0) // ... nor a descendant of the container
+        {
+            container2.fadeOut(100);
+        }
     }
 });
+
+
 
 // Called by google maps' callback
 function initMap() {

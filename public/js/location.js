@@ -15,4 +15,17 @@ function initializeLocationPage() {
 		console.log("Info Clicked");
 		e.preventDefault();
 	});
+    
+$(document).mouseup(function (e)
+{
+    var container1 = $('.content .upload.container');
+    var container2 = $('.info .floating-button');
+    
+    if (!container2.is(e.target) // if the target of the click isn't the container...
+        && container2.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container2.fadeOut(100);
+    }
+});
+    
 }
