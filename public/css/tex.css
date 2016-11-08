@@ -17,7 +17,8 @@ body{
 }
 
 .content {
-	height: 75%;
+    padding-top: 5%;
+	height: 85%;
 	position: relative;
 }
 
@@ -45,8 +46,9 @@ body{
 
 .header {
     z-index: 100;
-    position:relative;
+    position:fixed;
 	color: #fff;
+    clear;
   /*
   075F87
   1F779F*/
