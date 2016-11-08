@@ -81,18 +81,4 @@ $(document).mouseup(function (e)
     	if(!anyClicked(nav_and_btns, e))
     		nav_and_btns.nav.fadeOut(100);
     }
-    
-    // if (!container1.is(e.target) // if the target of the click isn't the container...
-    //     && container1.has(e.target).length === 0) // ... nor a descendant of the container
-    // {
-    //     container1.fadeOut(100);
-    // }
-    // else
-    // {
-    //     if (!container2.is(e.target) // if the target of the click isn't the container...
-    //         && container2.has(e.target).length === 0) // ... nor a descendant of the container
-    //     {
-    //         container2.fadeOut(100);
-    //     }
-    // }
 });

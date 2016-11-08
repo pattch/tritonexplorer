@@ -431,7 +431,7 @@ div.scroll
     overflow: scroll;
 }
 
-#profile-button{
+.content .profile-links .nav {
     position:relative;
     right:0;
     left:0;
@@ -449,13 +449,14 @@ div.scroll
     height: auto;
     width: 40%;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
-#profile-button:hover{
+.content .profile-links .nav:hover{
     background-color:#00BFFF;
 }
 
-#profile-button a{
+.content .profile-links .nav a {
     text-decoration: none;
     color: black;
 }
