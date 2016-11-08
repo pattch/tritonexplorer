@@ -459,28 +459,34 @@ div.scroll
     text-decoration: none;
     color: black;
 }
-.login {
-	position:fixed;
-	left:10px;
-	top:10px;
-	border-radius: 10px;
-	background-color: white;
-	color:black;
-	height:50px;
-	width:70px;
-	font-size:15px;
+
+.header .nav-left {
+  position: absolute;
+  top: 25px;
+  width: auto;
+  height: 30px;
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 5px 20px 0 20px;
+  background-color: #aae;
+  color: #fff;
+  text-shadow: none;
+  cursor: pointer;
 }
-.register {
-	position:fixed;
-	left:90px;
-	top:10px;
-	border-radius: 10px;
-	background-color: white;
-	color:black;
-	height:50px;
-	width:70px;
-	font-size:15px;
+
+.header .nav-left:hover {
+  background-color: #fff;
+  color: #000;
 }
+
+.header .nav-left.login {
+	left:20px;
+}
+
+.header .nav-left.register {
+	left:120px;
+}
+
 .button {
   position: relative;
   display: inline-block;
