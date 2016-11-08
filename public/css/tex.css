@@ -184,6 +184,8 @@ html
 }
 
 .recommendation {
+    display: inline-block;
+    width: 40%;
     font-size: 30px;
     font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
     text-align:center;
