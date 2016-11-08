@@ -4,13 +4,15 @@
 $(document).ready(function() {
 	initializeLogin();
 	initializeLikeButtons();
-})
+	initializeAboutPageNavigation();
+});
 
 function initializeLogin() {
 	var login_btn = $('.header .nav-left.login');
 	var register_btn = $('.header .nav-left.register');
 
 	login_btn.click(function() {
+		console.log("showing login form");
 		$('#loginform').removeClass('hidden');
 		$('#registerform').addClass('hidden');
 	});
@@ -38,6 +40,15 @@ function initializeLikeButtons() {
       like.removeClass('highlight');
     });
   });
+}
+
+function initializeAboutPageNavigation() {
+	var mng_friends = $('#manage-friends');
+	console.log(mng_friends);
+	mng_friends.click(function() {
+		console.log('Opening Manage Friends Form');
+		$('#manageFriendForm').removeClass('hidden');
+	})
 }
 
 function anyClicked(form_and_btns, e) {
@@ -70,15 +81,20 @@ $(document).mouseup(function (e)
     	nav : $('#registerform'),
     	buttons : [$('.header .nav-left.register')]
     }
+    var friends_btns = {
+    	nav : $('#manageFriendForm'),
+    	buttons : [$('#manage-friends')]
+    }
 
     var nav_btns = [
     	login_btns,
-    	register_btns
+    	register_btns,
+    	friends_btns
     ];
 
     for(var i = 0; i < nav_btns.length; i = i + 1) {
     	var nav_and_btns = nav_btns[i];
     	if(!anyClicked(nav_and_btns, e))
-    		nav_and_btns.nav.fadeOut(100);
+    		nav_and_btns.nav.addClass('hidden');
     }
 });
