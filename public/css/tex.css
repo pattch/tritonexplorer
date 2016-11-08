@@ -240,6 +240,7 @@ html
     padding-right: 40px;
     background-color: #328CC1;
     width: 100%;
+    height: auto;
 }
 .mission .ongoing{
     display: none;
@@ -461,27 +462,33 @@ div.scroll
     color: black;
 }
 
+.header .logo{
+    position: absolute;
+    left: 10px;
+}
+
 .header .nav-left {
   position: absolute;
-  top: 25px;
   width: auto;
+  top:15px;
   height: 30px;
   font-size: 15px;
   border-radius: 10px;
-  padding: 5px 20px 0 20px;
-  background-color: #aae;
+  padding: 5px 10px 0 10px;
+  background-color: #438496;
   color: #fff;
   text-shadow: none;
   cursor: pointer;
+    opacity: 0.8;
 }
 
 .header .nav-left:hover {
-  background-color: #fff;
-  color: #000;
+    opacity: 1;
+    background-color: #CD5360;
 }
 
 .header .nav-left.login {
-	left:20px;
+	left:80px;
 }
 
 .header .nav-left.register {

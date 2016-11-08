@@ -10,20 +10,19 @@
     <!--Header and header buttons-->
 	<div class="header vert-bg">
         <p class="header">Missions</p>
+        <img class="logo" src="/images/logo.png" style="width:60px;height:60px;"/>
         <span class="nav-left login" onclick="openlogin()">log in</span>
-        <span class="nav-left register" onclick="openregister()">Register</span>
 	</div>
     
     <!--Actual Objectives-->
     <div class="content scroll">
         {{#each missions}}
         <div class="mission">
-            <div>
+            <div class="mission-content">
                 <img src="{{img-url}}" />
                 <h2>{{name}}</h2>
                 <p>{{description}}</p>
             </div>
-            <br />
             <center>
                 <span class="button accept button-green">Accept</span>
                 <span class="button decline button-red">Decline</span>

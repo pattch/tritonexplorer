@@ -4,10 +4,11 @@ function initializeMissionButtons() {
 	var missions = $('.mission');
 	// console.log(accept_buttons);
 	missions.each(function(index) {
-		// console.log($(this));
+		//console.log($(this));
 		var accept = $(this).find('.accept');
 		var decline = $(this).find('.decline');
 		var ongoing = $(this).find('.ongoing');
+        var content = $(this).find('.mission-content');
 
 		accept.click(function() {
 			accept.hide();
@@ -18,6 +19,7 @@ function initializeMissionButtons() {
 		decline.click(function() {
 			accept.hide();
 			decline.hide();
+            content.fadeOut(200);
 		});
 	});
 }
