@@ -41,13 +41,13 @@
 
   <div  id="loginform" class="loginbox hidden">
     <!--Login form-->
-    <form action="/" method="post"> <!--need to change action-->
+    <form action="/accounts/" method="post"> <!--need to change action-->
         <div>
         <center>Login</center>
-        username/email:<input type="text"><br>
-        passward<input type="text"><br>
-        <center><input id="login-submit" type="button" onclick="hidelogin()" value="login"/>
-        <input id="login-cancel" type="button" onclick="hidelogin()" value="cancel"/></center>
+        username/email:<input type="text" name="username"><br>
+        passward<input type="text" name="password"><br>
+        <center><button id="login-submit" type="submit" value="login"/>
+        <a id="login-cancel" type="button" onclick="hidelogin()" value="cancel"/></a></center>
       </div>
     </form>
   </div>

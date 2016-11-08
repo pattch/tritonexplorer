@@ -7,7 +7,9 @@
 			"experience": 200,
 			"missions": [],
 			"college": 0,
-			"img-url": "/images/profile_man.png"
+			"img-url": "/images/profile_man.png",
+			"username": "johnsmith",
+			"password": "password"
 		},
 		{
 			"id": 2,
@@ -16,7 +18,9 @@
 			"experience": 500,
 			"missions": [],
 			"college": 1,
-			"img-url": "/images/profile_man.png"
+			"img-url": "/images/profile_man.png",
+			"username": "samplename",
+			"password": "password"
 		},
 		{
 			"id": 3,
@@ -25,7 +29,9 @@
 			"experience": 500,
 			"missions": [],
 			"college": 2,
-			"img-url": "/images/profile_man.png"
+			"img-url": "/images/profile_man.png",
+			"username": "another",
+			"password": "password"
 		},
 		{
 			"id": 4,
@@ -34,7 +40,9 @@
 			"experience": 150,
 			"missions": [],
 			"college": 1,
-			"img-url": "/images/profile_man.png"
+			"img-url": "/images/profile_man.png",
+			"username": "janedoe",
+			"password": "password"
 		},
 		{
 			"id": 5,
@@ -43,7 +51,9 @@
 			"experience": 0,
 			"missions": [],
 			"college": 4,
-			"img-url": "/images/profile_man.png"
+			"img-url": "/images/profile_man.png",
+			"username": "johnmayer",
+			"password": "password"
 		}
 	]
 }

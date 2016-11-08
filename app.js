@@ -18,6 +18,7 @@ var ranking = require('./routes/ranking');
 var objective = require('./routes/objective');
 var recommendations = require('./routes/recommendations');
 var locations = require('./routes/locations');
+var accounts = require('./routes/accounts');
 
 var app = express();
 
@@ -55,6 +56,9 @@ app.get('/locations/name/:name', locations.view_by_name);
 // Route for getting all locations as a JSON object
 app.get('/locations/all/', locations.all);
 
+
+// Route for authenticating
+app.post('/accounts/', accounts.login);
 
 // About Me Page
 app.get('/about/', about.view);
