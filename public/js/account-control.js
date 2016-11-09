@@ -1,11 +1,27 @@
 'use strict';
 
+var accountID = -1;
+
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
+    accountID = getAccountID();
 	initializeLogin();
 	initializeLikeButtons();
 	initializeAboutPageNavigation();
 });
+
+function getAccountID() {
+    var id = getCookie("accountID");
+    if(typeof id != "undefined" && id != null)
+        return id;
+    return -1;
+}
+
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
 
 function initializeLogin() {
     initializeLoginDialogs();
@@ -16,6 +32,11 @@ function initializeLoginDialogs() {
 	var login_dialog_btn = $('.header .nav-left.login');
 	var register_dialog_btn = $('.header .nav-left.register');
     var cancel_btn = $('#loginform .cancel.button');
+
+    if(accountID != -1) {
+        login_dialog_btn.addClass('hidden');
+        register_dialog_btn.addClass('hidden');
+    }
 
 	login_dialog_btn.click(function() {
 		console.log("showing login form");

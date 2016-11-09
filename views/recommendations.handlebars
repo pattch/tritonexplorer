@@ -10,7 +10,7 @@
 	<div class="header vert-bg">
         <p class="header">Discover</p>
         <img class="logo" src="/images/logo.png" style="width:60px;height:60px;"/>
-		<span class="nav-left login" onclick="openlogin()">log in</span>
+		<span class="nav-left login">log in</span>
 	</div>
 
 	<div class="content scroll" id="best-spots">
@@ -26,6 +26,17 @@
 			</div>
 		</div>
 		{{/each}}
+	
+		<div  id="loginform" class="loginbox hidden">
+			<!--Login form-->
+		    <h3>Login</h3>
+		    username: <input type="text" id="username"><br />
+		    password: <input type="text" id="password"><br />
+		    <center>
+		    	<span id="login-submit" class="login button">login</span>
+		    	<span id="login-cancel" class="cancel button"/>cancel</span>
+		    </center>
+		</div>
 	</div>
 
 	<div class="footer vert-bg">
@@ -54,6 +65,6 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/popup.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+	<script src="/js/account-control.js"></script>
 </body>
 </html>
