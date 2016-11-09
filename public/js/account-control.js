@@ -75,7 +75,7 @@ function authenticateByUsername(username,password) {
         console.log(data["id"]);
         // Create a cookie with the account id here.
         // console.log(data[id]);
-        document.cookie = "accountID=" + data["id"] + ";max-age=31536000";
+        document.cookie = "accountID=" + data["id"] + ";max-age=31536000;path=/";
     });
 }
 
