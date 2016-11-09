@@ -7,10 +7,10 @@
 <body>
   <div class="header vert-bg">
       <p class="header">About Me</p>
-      <a href="/about/"><img class="header-icon" src="/images/notification.png" alt="Edit" style="width:40px;height:40px"></a>
-      <img class="logo" src="/images/logo.png" style="width:60px;height:60px;"/>
-      <span class="nav-left login">Log In</span>
-</div>
+      <a href="/about/"><img class="header-icon" src="/images/settings.png" alt="Edit" style="width:40px;height:40px"></a>
+      <span class="nav-left login">log in</span>
+      <span class="nav-left register">Register</span>
+  </div>
 
   <div class="content scroll">
     <div class="profile card" id="edit" contenteditable="true">
@@ -34,7 +34,7 @@
       <br />
       <br />
       <!--Log out botton -->
-      <center><br><a href="/"><button class="button button-red">Log Out</button></a></br></center>
+      <center><br><a href="/"><button class="button button-red">log out</button></a></br></center>
       <br>
     </div>
   </div>
@@ -43,17 +43,11 @@
     <!--Login form-->
     <form action="/accounts/" method="post"> <!--need to change action-->
         <div>
-            <center><h3>Login</h3></center>
-            Username/Email:<input type="text" name="username">
-            <br>
-            Passward:<input type="text" name="password">
-            <br>
-            <p>New to Triton Explorer? <a href="/">Register Here!</a></p>
-            <br>
-            <center>
-                <button id="login-submit" type="submit" value="login">Submit</button>
-                <button id="login-cancel" type="button" onclick="hidelogin()" value="cancel">Cancel</button>
-            </center>
+        <center>Login</center>
+        username/email:<input type="text" name="username"><br>
+        passward<input type="text" name="password"><br>
+        <center><button id="login-submit" type="submit" value="login"/>
+        <a id="login-cancel" type="button" onclick="hidelogin()" value="cancel"/></a></center>
       </div>
     </form>
   </div>
@@ -104,7 +98,7 @@
             <!--friend and unfriend button for friend2-->
             <input type="button" id="friend2" onclick="changeFriendStatus('friend2','✓friend')";
             value="✓friend" class="friendbutton">
-          <br>
+          </br>
           <br>
           &emsp;&emsp;
           <img src="/images/friend3.jpg" style="width:150px; height=150px">
@@ -116,13 +110,13 @@
           <!--friend and unfriend button for friend4-->
           <input type="button" id="friend4" onclick="changeFriendStatus('friend4','✓friend')";
           value="✓friend" class="friendbutton">
+          </br>
           <br>
           &emsp;
-        <br>
-        <center>
-            <button id="login-submit" type="button" onclick="hideManageFriend()">Confirm</button>
-            <button id="login-cancel" type="button" onclick="hideManageFriend()">Cancel</button>
-        </center>
+          </br>
+
+        <center><input id="login-submit" type="button" onclick="hideManageFriend()" value="confirm"/>
+        <input id="login-cancel" type="button" onclick="hideManageFriend()" value="cancel"/></center>
       </div>
     </form>
   </div>

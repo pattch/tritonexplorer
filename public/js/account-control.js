@@ -8,19 +8,54 @@ $(document).ready(function() {
 });
 
 function initializeLogin() {
-	var login_btn = $('.header .nav-left.login');
-	var register_btn = $('.header .nav-left.register');
+    initializeLoginDialogs();
+    initializeLoginAuthentication();
+}
 
-	login_btn.click(function() {
+function initializeLoginDialogs() {
+	var login_dialog_btn = $('.header .nav-left.login');
+	var register_dialog_btn = $('.header .nav-left.register');
+    var cancel_btn = $('#loginform .cancel.button');
+
+	login_dialog_btn.click(function() {
 		console.log("showing login form");
 		$('#loginform').removeClass('hidden');
 		$('#registerform').addClass('hidden');
 	});
 
-	register_btn.click(function() {
+	register_dialog_btn.click(function() {
 		$('#loginform').addClass('hidden');
 		$('#registerform').removeClass('hidden');
 	});
+
+    cancel_btn.click(function() {
+        console.log("Closing forms.");
+        $('#loginform').addClass('hidden');
+        $('#registerform').addClass('hidden');
+    });
+}
+
+function initializeLoginAuthentication() {
+    var login_btn = $('#loginform .login.button');
+
+    login_btn.click(function() {
+        var username = $('#loginform #username').val();
+        var password = $('#loginform #password').val();
+
+        authenticateByUsername(username,password);
+    });
+}
+
+function authenticateByUsername(username,password) {
+    var accountsURL = "/accounts/";
+    $.post( accountsURL, { username: username, password: password })
+    .done(function( data ) {
+        console.log(data);
+        console.log(data["id"]);
+        // Create a cookie with the account id here.
+        // console.log(data[id]);
+        document.cookie = "accountID=" + data["id"] + ";max-age=31536000";
+    });
 }
 
 function initializeLikeButtons() {
