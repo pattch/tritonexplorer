@@ -34,7 +34,7 @@ function initializeLoginDialogs() {
     var cancel_btn = $('#loginform .cancel.button');
 
     if(accountID != -1) {
-        login_dialog_btn.addClass('hidden');
+        //login_dialog_btn.addClass('hidden');
         register_dialog_btn.addClass('hidden');
     }
 
@@ -111,14 +111,14 @@ function anyClicked(form_and_btns, e) {
 	var nav = form_and_btns.nav;
 	var buttons = form_and_btns.buttons;
 
-	if(nav.is(e.target) 
+	if(nav.is(e.target)
 		|| (nav.has(e.target).length !== 0))
 		return true;
 
 	var any_btn_clicked = false;
 	for(var i = 0; i < buttons.length; i = i + 1) {
 		var btn = buttons[i];
-		if(btn.is(e.target) 
+		if(btn.is(e.target)
 			|| (btn.has(e.target).length !== 0))
 			return true;
 	}
