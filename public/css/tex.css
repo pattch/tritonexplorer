@@ -11,7 +11,7 @@
 	width:100%;
 }
 
-body{
+body {
     height:100%;
     min-height:100%;
 }
@@ -213,7 +213,8 @@ html
   margin-top:20px;
 }
 
-#login-submit{
+.loginbox .login.button,
+.loginbox .register.button {
     color: white;
 	background-color:#286DA8;
 	border:1px solid #4e6096;
@@ -224,7 +225,7 @@ html
     box-shadow: 2px 2px 2px #888888;
 }
 
-#login-cancel{
+.loginbox .cancel.button{
     color: white;
 	background-color: #CD5360;
 	border:1px solid #8B0000;

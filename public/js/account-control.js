@@ -34,7 +34,7 @@ function initializeLoginDialogs() {
     var cancel_btn = $('#loginform .cancel.button');
 
     if(accountID != -1) {
-        //login_dialog_btn.addClass('hidden');
+        login_dialog_btn.addClass('hidden');
         register_dialog_btn.addClass('hidden');
     }
 

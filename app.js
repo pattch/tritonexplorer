@@ -61,6 +61,8 @@ app.get('/login/', login.view);
 
 // Route for authenticating
 app.post('/accounts/', accounts.login);
+// Route signing up
+app.post('/accounts/register/', accounts.register);
 
 // About Me Page
 app.get('/about/', about.view);
