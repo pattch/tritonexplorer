@@ -14,8 +14,9 @@ function initializeLoginOverlay() {
     }
 
 	login_btn.click(function() {
-    console.log("login clicked");
     $('#overlay').addClass('hidden');
+    $('#loginform').removeClass('hidden');
+
 	});
 
 	guest_btn.click(function() {
