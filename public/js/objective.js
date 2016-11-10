@@ -22,4 +22,13 @@ function initializeMissionButtons() {
             content.fadeOut(200);
 		});
 	});
+    
+    $('#daily-button').click(function(){
+        $('#mysterious-mission').hide();
+        $('#daily-mission').show();
+    });
+    $('#mysterious-button').click(function(){
+        $('#mysterious-mission').show();
+        $('#daily-mission').hide();
+    });
 }
