@@ -17,8 +17,7 @@ body{
 }
 
 .content {
-    padding-top: 5%;
-	height: 85%;
+	height: 75%;
 	position: relative;
 }
 
@@ -46,7 +45,7 @@ body{
 
 .header {
     z-index: 100;
-    position:fixed;
+    position:relative;
 	color: #fff;
     clear;
   /*
