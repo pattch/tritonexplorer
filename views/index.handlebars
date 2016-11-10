@@ -1,4 +1,5 @@
 <!doctype html>
+<meta name="viewport" content="width=device-width" />
 
 <html>
 <head>
@@ -83,6 +84,14 @@
 		</div>
 	</div>
 
+	<!--overlay login page-->
+	<div id="overlay" class="overlay vert-bg">
+		<center>
+			<span id="login" class="login start button">login</span><br/>
+			<span id="guest" class="guest start button">continue as a guest</span><br/>
+		</center>
+	</div>
+
 	<div class="footer vert-bg">
 		<a  class="nav-button" href="/objective/">
             <img src="/images/objectives.png" style="width:60px; height=60px">
@@ -109,6 +118,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="/js/map-control.js"></script>
 	<script src="/js/account-control.js"></script>
+	<script src="/js/overlay.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB82M8lTcnbfwp8lvbLN1Q30LLWAX2I-zE&libraries=places&callback=initMap"></script>
 </body>
 </html>

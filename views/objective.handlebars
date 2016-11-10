@@ -1,4 +1,5 @@
 <!doctype html>
+<meta name="viewport" content="width=device-width" />
 
 <html>
 <head>
@@ -6,7 +7,7 @@
 	<link href="/css/tex.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="blue-bg">
     <!--Header and header buttons-->
 	<div class="header vert-bg">
         <p class="header">Missions</p>
@@ -16,6 +17,14 @@
     
     <!--Actual Objectives-->
     <div class="content scroll">
+        <div id="top-bar">
+        <ul id="top-bar-nav">
+            <li><a href="/objective/" id="daily-button">Daily</a></li>
+            <li><a href="/objective/" id="mysterious-button">Mysterious</a></li>
+        </ul>
+        </div>
+        
+        <div id="daily-mission">
         {{#each missions}}
         <div class="mission">
             <div class="mission-content">
@@ -30,6 +39,24 @@
             <p class="ongoing">In progress...</p>
         </div>
         {{/each}}
+        </div>
+        
+        <div id="mysterious-mission" class="hidden">
+        {{#each missions}}
+        <div class="mission">
+            <div class="mission-content">
+                <img src="{{img-url}}" />
+                <h2>{{name}}</h2>
+                <p>{{description}}</p>
+            </div>
+            <center>
+                <span class="button accept button-green">Accept</span>
+                <span class="button decline button-red">Decline</span>
+            </center>
+            <p class="ongoing">In progress...</p>
+        </div>
+        {{/each}}
+        </div>
     
         <div  id="loginform" class="loginbox hidden">
             <!--Login form-->

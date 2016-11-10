@@ -13,7 +13,7 @@ global.loaded_accounts = require('./public/js/accounts.json');
 var index = require('./routes/index');
 // Example route
 // var user = require('./routes/user');
-var login = require('./routes/login');
+//var login = require('./routes/login');
 var about = require('./routes/about');
 var ranking = require('./routes/ranking');
 var objective = require('./routes/objective');
@@ -57,7 +57,7 @@ app.get('/locations/name/:name', locations.view_by_name);
 // Route for getting all locations as a JSON object
 app.get('/locations/all/', locations.all);
 
-app.get('/login/', login.view);
+//app.get('/login/', login.view);
 
 // Route for authenticating
 app.post('/accounts/', accounts.login);
