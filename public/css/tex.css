@@ -44,7 +44,6 @@ body{
 }
 
 .header {
-    z-index: 100;
     position:relative;
 	color: #fff;
     clear;
@@ -238,6 +237,7 @@ html
 
 /*Style for missions*/
 .mission{
+    display: inline-block;
     color: white;
     padding-top: 20px;
     padding-bottom: 20px;
