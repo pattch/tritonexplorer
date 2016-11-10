@@ -13,7 +13,7 @@ global.loaded_accounts = require('./public/js/accounts.json');
 var index = require('./routes/index');
 // Example route
 // var user = require('./routes/user');
-var about = require('./routes/');
+var login = require('./routes/login');
 var about = require('./routes/about');
 var ranking = require('./routes/ranking');
 var objective = require('./routes/objective');
