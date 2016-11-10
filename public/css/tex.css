@@ -750,3 +750,10 @@ div.scroll
     background: -moz-linear-gradient(#0000CD, #438496); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#0000CD, #438496); /* Standard syntax (must be last) */
 }
+
+/*Mobile Development*/
+@media only screen  and (max-width: 736px) { 
+      .header{
+          font-size: 3em;
+      }
+}
