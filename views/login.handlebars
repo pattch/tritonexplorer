@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Triton Explorer</title>
+	<link href="/css/tex.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+</head>
+
+<body>
+  <div class="header vert-bg">
+        <p class="header">Triton Explorer</p>
+        <img class="logo" src="/images/logo.png" style="width:60px;height:60px;"/>
+  </div>
+  <!--Continue as guest or log in -->
+  <div class="content vert-bg">
+    <center>
+      <span id="login" class="login start button" >login</span><br/>
+      <span id="login" class="guest start button"/>continue as a guest</span><br/>
+    </center>
+  </div>
+  <script src="/js/popup.js"></script>
+  <script src="/js/account-control.js"></script>
+	<div class="footer vert-bg">
+		<a  class="nav-button" href="/objective/">
+						<img src="/images/objectives.png" style="width:60px; height=60px">
+						<p>Missions</p>
+				</a>
+		<a class="nav-button" href="/recommendations/">
+						<img src="/images/discover.png" style="width:60px; height=60px">
+						<p>Discover</p>
+				</a>
+		<a class="nav-button active" href="/">
+						<img src="/images/home.png" style="width:60px; height=60px">
+						<p>Home</p>
+				</a>
+		<a class="nav-button" href="/ranking/">
+						<img src="/images/ranking.png" style="width:60px; height=60px">
+						<p>Ranking</p>
+				</a>
+		<a class="nav-button" href="/about/">
+						<img src="/images/user.png" style="width:60px; height=60px">
+						<p>Profile</p>
+				</a>
+	</div>
+</body>
+</html>
