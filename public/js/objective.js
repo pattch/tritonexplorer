@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	initializeMissionButtons();
-	redirectForAccount();
+	redirectForAccountNoMissions();
 });
 
 function getCookie(name) {
@@ -44,12 +44,12 @@ function initializeMissionButtons() {
     });
 }
 
-function redirectForAccount() {
+function redirectForAccountNoMissions() {
 	var account_id = getCookie("accountID");
 	var no_missions = $('#no-missions').length;
 
 	if(typeof account_id != "undefined" && no_missions == 1 && account_id !== -1) {
-		alert("Redirecting!");
+		// alert("Redirecting!");
 		window.location.href = account_id;
 	}
 }

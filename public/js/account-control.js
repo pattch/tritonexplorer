@@ -164,15 +164,15 @@ function anyClicked(form_and_btns, e) {
 	return false;
 }
 
-function redirectForAccount() {
-    var account_id = getCookie("accountID");
-    var no_missions = $('#no-missions').length;
+// function redirectForAccount() {
+//     var account_id = getCookie("accountID");
+//     var no_account = $('#no-account').length;
 
-    if(typeof account_id != "undefined" && no_account == 1 && account_id !== -1) {
-        alert("Redirecting!");
-        window.location.href = account_id;
-    }
-}
+//     if(typeof account_id != "undefined" && no_account == 1 && account_id !== -1) {
+//         alert("Redirecting!");
+//         window.location.href = account_id;
+//     }
+// }
 
 // Hide dialogs when clicking on the page and not on form
 $(document).mouseup(function (e)
