@@ -23,6 +23,7 @@
         </ul>
         </div>
         
+        {{#if missions}}
         <div id="daily-mission">
         {{#each missions}}
         <div class="mission">
@@ -56,6 +57,13 @@
         </div>
         {{/each}}
         </div>
+        {{else}}
+        <div id="no-missions" class="mission">
+            <center>
+                <span class="message">In order to view missions, please log in</span>
+            </center>
+        </div>
+        {{/if}}
     
         <div  id="loginform" class="loginbox hidden">
             <!--Login form-->

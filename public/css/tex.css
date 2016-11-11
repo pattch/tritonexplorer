@@ -290,6 +290,13 @@ html
     width: 200px;
     float:right;
 }
+.mission .message {
+  font-size: 1.5em;
+  color: #fff;
+  opacity: 0.8;
+  position: relative;
+  top: 2em;
+}
 
 .content .upload.floating-button {
     border-radius: 15px;
