@@ -66,6 +66,7 @@ app.post('/accounts/register/', accounts.register);
 
 // About Me Page
 app.get('/about/', about.view);
+app.get('/about/:id', about.view);
 
 // Rankings Page
 app.get('/ranking/', ranking.view);

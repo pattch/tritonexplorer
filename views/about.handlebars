@@ -13,23 +13,24 @@
   </div>
 
   <div class="content scroll">
-    <div class="profile card" id="edit" contenteditable="true">
+    {{#if account}}
+    <div class="profile card" id="edit">
       <br>
-			<center>
-        <img src="/images/profile_man.png" alt=""style="width:100px;height:100px">
-  			<br><span class="name">John Smith</span></br>
-  			<br><span class="title">Entry Level Explorer</span></br>
+      <center>
+        <img src="{{account.img-url}}" alt=""style="width:100px;height:100px">
+        <br><span class="name">{{account.name}}</span></br>
+        <br><span class="title">Entry Level Explorer</span></br>
         <img src="/images/level.png" alt=""style="width:300px;height:40px" />
       </center>
     </div>
 
     <div class="profile-links">
-      <div class="nav">College: Eleanor Roosevelt</div>
-			<div class="nav">Email: sample@ucsd.edu</div>
+      <div class="nav">College: {{account.college}}</div>
+      <div class="nav">Email: {{account.email}}</div>
       <br />
       <div class="nav" id="manage-friends">Manage Friends</div>
-			<div class="nav" onclick="openChangePassword()">Change Password</div>
-			<div class="nav" onclick="openHelp()">Help &amp; Support</div>
+      <div class="nav" onclick="openChangePassword()">Change Password</div>
+      <div class="nav" onclick="openHelp()">Help &amp; Support</div>
       <br />
       <br />
       <br />
@@ -40,6 +41,36 @@
       </center>
       <br>
     </div>
+    {{else}}
+    <div class="profile card" id="edit" contenteditable="true">
+      <br>
+      <center>
+        <img src="/images/profile_man.png" alt=""style="width:100px;height:100px">
+        <br><span class="name">John Smith</span></br>
+        <br><span class="title">Entry Level Explorer</span></br>
+        <img src="/images/level.png" alt=""style="width:300px;height:40px" />
+      </center>
+    </div>
+
+    <div id="no-account" class="profile-links">
+      <div class="nav">College: Eleanor Roosevelt</div>
+      <div class="nav">Email: sample@ucsd.edu</div>
+      <br />
+      <div class="nav" id="manage-friends">Manage Friends</div>
+      <div class="nav" onclick="openChangePassword()">Change Password</div>
+      <div class="nav" onclick="openHelp()">Help &amp; Support</div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <!--Log out botton -->
+      <center>
+        <span id="logout"class="button button-red">log out</span>
+      </center>
+      <br>
+    </div>
+    {{/if}}
+
   </div>
 
   <div  id="loginform" class="loginbox hidden">
