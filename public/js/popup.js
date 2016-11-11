@@ -17,30 +17,30 @@ function hideregister(){
   document.getElementById('registerform').style.display="none";
 }
 
-// var count=1;
-// function changeColor(btn,color){
-//     var property = document.getElementById(btn);
-//     if (count == 0){
-//         property.style.backgroundColor = "#C0C0C0"
-//         count=1;
-//     }
-//     else{
-//         property.style.backgroundColor = "#F08080"
-//         count=0;
-//     }
-// }
-// var dislike_count=1;
-// function dislikeChangeColor(btn,color){
-//     var property = document.getElementById(btn);
-//     if (dislike_count == 0){
-//         property.style.backgroundColor = "#C0C0C0"
-//         dislike_count=1;
-//     }
-//     else{
-//         property.style.backgroundColor = "#FFAE33"
-//         dislike_count=0;
-//     }
-// }
+ var count=1;
+ function changeColor(btn,color){
+     var property = document.getElementById(btn);
+     if (count == 0){
+         property.style.backgroundColor = "#C0C0C0"
+         count=1;
+     }
+     else{
+         property.style.backgroundColor = "#F08080"
+         count=0;
+     }
+ }
+ var dislike_count=1;
+ function dislikeChangeColor(btn,color){
+     var property = document.getElementById(btn);
+     if (dislike_count == 0){
+         property.style.backgroundColor = "#C0C0C0"
+         dislike_count=1;
+     }
+     else{
+         property.style.backgroundColor = "#FFAE33"
+        dislike_count=0;
+     }
+ }
 
 function initLikeButtons() {
   var recommendations = $('.recommendation');
@@ -82,7 +82,7 @@ function changeFriendStatus(btn,value){
 
 
 
-function openChangePassword(){
+/*function openChangePassword(){
   document.getElementById('manageFriendForm').style.display="none";
   document.getElementById('changePasswordForm').style.display="block";
 }
@@ -130,4 +130,4 @@ $(function() {
         $('#result').text(JSON.stringify($('loginform').serializeObject()));
         return false;
     });
-});
+}); */
