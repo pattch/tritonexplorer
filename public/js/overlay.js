@@ -30,7 +30,6 @@ function initializeLoginOverlay() {
 
     $('#overlay').addClass('hidden');
     $('#loginform').removeClass('hidden');
-    document.cookie = "clicked=1; max-age=" + cookie_time + "; path=/";
 	});
 
 	guest_btn.click(function() {
