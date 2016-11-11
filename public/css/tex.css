@@ -247,14 +247,15 @@ html
 
 .loginbox .login.button,
 .loginbox .register.button {
-    color: white;
+  color: white;
 	background-color:#286DA8;
 	border:1px solid #4e6096;
 	display:inline-block;
 	border-radius: 10px;
 	height: 40px;
-
-    box-shadow: 2px 2px 2px #888888;
+	width:80px;
+  box-shadow: 2px 2px 2px #888888;
+	position:relative;
 }
 
 .loginbox .cancel.button{
