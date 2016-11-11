@@ -11,7 +11,8 @@
       "description": "This is a description of the Student Services Center.",
       "lat":-117.2359174489975,
       "lng": 32.87866362075371,
-      "img-url": "/images/round_table_pizza.png"
+      "img-url": "/images/round_table_pizza.png",
+      "account": -1
     },
     {
       "id" : 2,
@@ -25,7 +26,8 @@
       "description": "This is a description for Sun God.",
       "lat": -117.23982274532318,
       "lng": 32.87876273414574,
-      "img-url": "/images/cafe_ventanas.png"
+      "img-url": "/images/cafe_ventanas.png",
+      "account": -1
     },
     {
       "id" : 3,
@@ -40,7 +42,8 @@
       "description": "This is a description of the General Store.",
       "lat": -117.24005341529845,
       "lng": 32.87708229664578,
-      "img-url": "/images/64_degrees.png"
+      "img-url": "/images/64_degrees.png",
+      "account": -1
     }
   ]
 }

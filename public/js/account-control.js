@@ -8,6 +8,7 @@ $(document).ready(function() {
 	initializeLogin();
 	initializeLikeButtons();
 	initializeAboutPageNavigation();
+    initializeRegistration();
 });
 
 function getAccountID() {
@@ -76,6 +77,43 @@ function authenticateByUsername(username,password) {
         // Create a cookie with the account id here.
         // console.log(data[id]);
         document.cookie = "accountID=" + data["id"] + ";max-age=31536000;path=/";
+        location.reload();
+    });
+}
+
+function initializeRegistration() {
+    var register_btn = $('#loginform .register.button');
+
+    register_btn.click(function() {
+        // action="/accounts/register/" method="post"
+        var username = $('#loginform .registration .username').val();
+        var password = $('#loginform .registration .password').val();
+        var name = $('#loginform .registration .name').val();
+        var email = $('#loginform .registration .email').val();
+        var college = $('#loginform .registration .college').val();
+
+        registerNewUser(username,password,name,email,college);
+    });
+}
+
+function registerNewUser(username,password,name,email,college) {
+    var registrationURL = "/accounts/register/";
+    var account = {
+        username: username,
+        password: password,
+        name: name,
+        email: email,
+        college: college
+    };
+    console.log(account);
+    $.post( registrationURL, account)
+    .done(function( data ) {
+        console.log(data);
+        console.log(data["id"]);
+        // Create a cookie with the account id here.
+        // console.log(data[id]);
+        document.cookie = "accountID=" + data["id"] + ";max-age=31536000;path=/";
+        location.reload();
     });
 }
 

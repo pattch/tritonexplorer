@@ -72,6 +72,7 @@ app.get('/ranking/', ranking.view);
 
 // Objectives / Missions Page
 app.get('/objective/', objective.view);
+app.get('/objective/:id', objective.view);
 
 // Recommendations Page
 app.get('/recommendations/', recommendations.view);
