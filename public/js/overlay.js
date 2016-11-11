@@ -1,6 +1,7 @@
 var clicked = 0;
 $(document).ready(function() {
   initializeLoginOverlay();
+  logOut();
 });
 
 function getCookie(name) {
@@ -37,5 +38,17 @@ function initializeLoginOverlay() {
     $('#overlay').addClass('hidden');
     var cookie_time = 60 * 60 * 30; // 30 minutes
     document.cookie = "clicked=1; max-age=" + cookie_time + "; path=/";
+	});
+}
+
+function logOut(){
+  clicked = getCookie("clicked");
+  var logout_btn = $('#logout');
+
+  logout_btn.click(function() {
+    clicked = 0;
+    $('#overlay').removeClass('hidden');
+    var cookie_time = 60 * 60 * 30; // 30 minutes
+    document.cookie = "clicked=0; max-age=" + cookie_time + "; path=/";
 	});
 }
