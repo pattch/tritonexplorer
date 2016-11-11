@@ -35,6 +35,10 @@ exports.view = function(req, res){
 			}
 		}
 		console.log(rendered_missions);
-		res.render('objective', {missions: rendered_missions});
+		if(rendered_missions.length == 0) {
+			res.render('objective', {no_missions: true});
+		} else {
+			res.render('objective', {missions: rendered_missions});
+		}
   	}
 };

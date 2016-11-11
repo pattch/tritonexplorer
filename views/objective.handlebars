@@ -58,11 +58,19 @@
         {{/each}}
         </div>
         {{else}}
+        {{#if no_missions}}
+        <div class="mission">
+            <center>
+                <span class="message">No missions to display</span>
+            </center>
+        </div>
+        {{else}}
         <div id="no-missions" class="mission">
             <center>
                 <span class="message">In order to view missions, please log in</span>
             </center>
         </div>
+        {{/if}}
         {{/if}}
     
         <div  id="loginform" class="loginbox hidden">
