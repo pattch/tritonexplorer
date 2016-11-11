@@ -44,11 +44,14 @@ function initializeLoginOverlay() {
 function logOut(){
   clicked = getCookie("clicked");
   var logout_btn = $('#logout');
+  // alert("Logging out");
 
   logout_btn.click(function() {
     clicked = 0;
     $('#overlay').removeClass('hidden');
-    var cookie_time = 60 * 60 * 30; // 30 minutes
-    document.cookie = "clicked=0; max-age=" + cookie_time + "; path=/";
+    document.cookie = "clicked=0; max-age=-1; path=/";
+    document.cookie = "accountID=-1; max-age=-1; path=/";
+    // alert("Redirecting");
+    window.location.href = "/";
 	});
 }
