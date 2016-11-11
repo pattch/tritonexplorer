@@ -1,5 +1,5 @@
-
-var clicked;
+document.cookie = "clicked=0; max-age=31536000; path=/";
+var clicked = document.cookie;
 
 $(document).ready(function() {
   initializeLoginOverlay();
