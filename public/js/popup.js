@@ -82,7 +82,7 @@ function changeFriendStatus(btn,value){
 
 
 
-/*function openChangePassword(){
+function openChangePassword(){
   document.getElementById('manageFriendForm').style.display="none";
   document.getElementById('changePasswordForm').style.display="block";
 }
@@ -93,12 +93,12 @@ function hideChangePassword(){
 
 function openManageFriend(){
   document.getElementById('changePasswordForm').style.display="none";
-  document.getElementById('manageFriendForm').style.display="block";
+  $('#manageFriendForm').removeClass('hidden');
 }
 
 function hideManageFriend(){
   document.getElementById('changePasswordForm').style.display="none";
-  document.getElementById('manageFriendForm').style.display="none";
+  $('#manageFriendForm').addClass('hidden');
 }
 function openHelp(){
   document.getElementById('helpForm').style.display="block";
@@ -130,4 +130,4 @@ $(function() {
         $('#result').text(JSON.stringify($('loginform').serializeObject()));
         return false;
     });
-}); */
+});
