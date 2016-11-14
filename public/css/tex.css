@@ -316,7 +316,6 @@ html
 input[type=text], select {
     width: 25%;
     padding: 6px 10px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -455,21 +454,24 @@ input[type=button], select {
   box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.15);
 }
 
-.content .info.container p {
+.content .info.container p,
+.content .upload.container p {
   margin: 10px 0 35px 0;
   text-align: right;
   border-bottom: 1px solid #eee;
   padding-bottom: 15px;
 }
 
-.content .info.container .title {
+.content .info.container .title,
+.content .upload.container .title {
   font-weight: 700;
   color: #444;
   float:left;
   margin-right: 20px;
 }
 
-.content .info.container h3 {
+.content .info.container h3,
+.content .upload.container h3 {
   text-align: center;
   font-family: sans-serif;
   font-weight: 100;

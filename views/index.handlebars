@@ -23,41 +23,51 @@
 		</div>
 
 		<div class="upload container hidden">
-			<h4>Found a New&amp;Cool Event or Location on Campus? <br/>Share it Now!</h4>
+			<h3>Submit new Location</h3>
 
-            <div class="add-photo">
+<!--             <div class="add-photo">
                 <br/>
                 <a href="/" style="text-decoration: none; color:white">Add a Photo Here(More XP!)</a>
-            </div>
+            </div> -->
 
 			<form action="/" method="post">
-				Title: <input type="text" name="title" /><br />
-				Tags: <input type="text" name="tags" /><br />
-				Rating: (1-5)
-                <!--<input type="number" name="rating" min="1" max="5" /> -->
-                <span class="starRating">
-                    <input id="rating5" type="radio" name="rating" value="5">
-                    <label for="rating5">5</label>
-                    <input id="rating4" type="radio" name="rating" value="4">
-                    <label for="rating4">4</label>
-                    <input id="rating3" type="radio" name="rating" value="3">
-                    <label for="rating3">3</label>
-                    <input id="rating2" type="radio" name="rating" value="2">
-                    <label for="rating2">2</label>
-                    <input id="rating1" type="radio" name="rating" value="1">
-                    <label for="rating1">1</label>
-                </span>
-                <br />
-				Description: <input type="text" name="description" /><br />
-				Latitude: 
-				<input type="text" id="input-lat" name="lat" value="32.8786" />
-				Longitude:
-				<input type="text" id="input-lng" name="lng" value="-117.2359" />
-				<input type="button" value="Detect Location" onclick="getGeoLocationConst()" /><br />
-				<center>
-                    <button type="submit" id="add-location" class="button button-green">Submit</button>
-                    <span class="button button-red">Cancel</span>
-                </center>
+				<p>
+					<span class="title">title</span><input type="text" name="title" />
+				</p>
+				<p>
+					<span class="title">tags</span><input type="text" name="tags" />
+				</p>
+				<p>
+					<span class="title">rating (1-5)</span>
+	                <!--<input type="number" name="rating" min="1" max="5" /> -->
+	                <span class="starRating">
+	                    <input id="rating5" type="radio" name="rating" value="5">
+	                    <label for="rating5">5</label>
+	                    <input id="rating4" type="radio" name="rating" value="4">
+	                    <label for="rating4">4</label>
+	                    <input id="rating3" type="radio" name="rating" value="3">
+	                    <label for="rating3">3</label>
+	                    <input id="rating2" type="radio" name="rating" value="2">
+	                    <label for="rating2">2</label>
+	                    <input id="rating1" type="radio" name="rating" value="1">
+	                    <label for="rating1">1</label>
+	                </span>
+	            </p>
+				<p>
+					<span class="title">description</span>
+					<input type="text" name="description" /><br />
+				</p>
+				<p>
+					<span class="title">latitude</span>
+					<input type="text" id="input-lat" name="lat" value="32.8786" />
+					<span class="title">longitude</span>
+					<input type="text" id="input-lng" name="lng" value="-117.2359" />
+					<input type="button" value="Detect Location" onclick="getGeoLocationConst()" /><br />
+					<center>
+	                    <button type="submit" id="add-location" class="button button-green">Submit</button>
+	                    <span class="button button-red">Cancel</span>
+	                </center>
+	            </p>
 			</form>
 		</div>
 
