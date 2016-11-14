@@ -3,72 +3,61 @@
 var searchable_titles = [];
 var location_id_by_title = {};
 
-// Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializeMapPage();
 })
 
-/*
- * Function that is called when the document is ready.
- */
 function initializeMapPage() {
-	// add any functionality and listeners you want here
-	$('.content .upload.floating-button').on('click', function(e) {
-		$('.content .upload.container').fadeIn(100);
-		console.log("Upload Clicked");
-		e.preventDefault();
-	});
-    
-    $('.content .upload.container .button-red').on('click', function(e) {
-		$('.content .upload.container').hide();
-		console.log("Upload Clicked");
-		e.preventDefault();
-	});
-
     var searchBox = $('#pac-input');
     initSearch(searchBox);
-	// console.log(searchable_titles);
-
-	// $('#add-location').on('click', function(e) {
-	// 	console.log('Adding Location');
-	// 	add_location();
-	// 	e.preventDefault();
-	// });
 }
 
-$(document).mouseup(function (e)
-{
-    var container1 = $('.content .upload.container');
-    var container2 = $('.info .floating-button');
-    
-    if (!container1.is(e.target) // if the target of the click isn't the container...
-        && container1.has(e.target).length === 0) // ... nor a descendant of the container
-    {
-        container1.fadeOut(100);
-    }
-    else
-    {
-        if (!container2.is(e.target) // if the target of the click isn't the container...
-            && container2.has(e.target).length === 0) // ... nor a descendant of the container
-        {
-            container2.fadeOut(100);
-        }
-    }
-});
+function initializeLocations() {
+	var lat_txt = $('.content .info.container .lat').text(),
+		lng_txt = $('.content .info.container .lng').text();
 
+	if(lat_txt == "" || lng_txt == "") {
+		var ucsd = {lat: 32.8801, lng: -117.2340};
+		return {
+			"title": "UCSD",
+			"location": ucsd,
+			"is_default": true
+		}
+	}
 
+	var lat_float = parseFloat(lat_txt),
+		lng_float = parseFloat(lng_txt);
+
+	var title = $('.content .info.container h3').text();
+
+	return {
+		"title": title,
+		"location": {
+			lat: lat_float,
+			lng: lng_float
+		},
+		"is_default": false
+	}
+}
 
 // Called by google maps' callback
 function initMap() {
-	// map.data.loadGeoJson('data.json');
-	console.log("InitMap called");
-	var ucsd = {lat: 32.8801, lng: -117.2340};
+	var location_info = initializeLocations();
+	var location = location_info["location"];
+
 	var map = new google.maps.Map($('#map')[0], {
 	  zoom: 15,
-	  center: ucsd
+	  center: location
 	});
 
-	// map.data.loadGeoJson('./js/map.geojson');
+	// If we're not on the home page, add a marker
+	if(!location_info["is_default"]) {
+		var marker = new google.maps.Marker({
+			position: location,
+			map: map,
+			title: location_info["title"]
+		});
+	}
 
 	var input = document.getElementById('pac-input');
     // var searchBox = new google.maps.places.SearchBox(input);
@@ -80,14 +69,11 @@ function onSearchSelect(event, ui) {
 }
 
 function getLocations() {
-	// var searchable_titles = [];
-	// var location_id_by_title = {};
 	var locationsURL = "/locations/all/";
 	$.ajax({
 	  dataType: "json",
 	  url: locationsURL,
 	  success: function(response) {
-	  	// console.log(response);
 	  	$.each(response, function(index, obj) {
 	  		var loc_name = obj['name'];
 	  		var loc_id = obj['id'];
@@ -104,10 +90,8 @@ function initSearch(searchBox) {
 	searchBox.autocomplete({
 		source: searchable_titles,
 		select: function(event, ui) {
-			// console.log(ui.item.label);
 			var name = ui.item.label;
 			var id = location_id_by_title[name];
-			// console.log(id);
 			var url = "/locations/id/" + id;
 			location.href=url;
 		}
@@ -131,3 +115,5 @@ function onGeoSuccess(event) {
 function onGeoError(event) {
 	alert("Error code " + event.code + ". " + event.message);
 }
+
+

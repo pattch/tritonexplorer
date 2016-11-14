@@ -139,15 +139,14 @@ function initializeLikeButtons() {
 
 function initializeAboutPageNavigation() {
 	var mng_friends = $('#manage-friends');
-	console.log(mng_friends);
 	mng_friends.click(function() {
-		console.log('Opening Manage Friends Form');
 		$('#manageFriendForm').removeClass('hidden');
 	})
 }
 
 function anyClicked(form_and_btns, e) {
 	var nav = form_and_btns.nav;
+    console.log(nav);
 	var buttons = form_and_btns.buttons;
 
 	if(nav.is(e.target)
@@ -175,31 +174,74 @@ function redirectForAccount() {
     }
 }
 
-// Hide dialogs when clicking on the page and not on form
-$(document).mouseup(function (e)
-{
+function hideNav(nav_btns) {
+    for(var i = 0; i < nav_btns.length; i = i + 1) {
+        var nav_and_btns = nav_btns[i];
+        var nav = nav_and_btns.nav;
+        nav.addClass('hidden');
+    }
+}
+
+$(document).click(function(event) {
+    var target = $(event.target);
+    // console.log(target);
     var login_btns = {
-    	nav : $('#loginform'),
-    	buttons : [$('.header .nav-left.login')]
-    };
+        nav : $('#loginform'),
+        buttons : [$('.header .nav-left.login')],
+        closing : []
+    }
     var register_btns = {
-    	nav : $('#registerform'),
-    	buttons : [$('.header .nav-left.register')]
+        nav : $('#registerform'),
+        buttons : [$('.header .nav-left.register')],
+        closing : []
     }
     var friends_btns = {
-    	nav : $('#manageFriendForm'),
-    	buttons : [$('#manage-friends')]
+        nav : $('#manageFriendForm'),
+        buttons : [$('#manage-friends')],
+        closing : []
+    }
+    var info_btns = {
+        nav : $('.content .info.container'),
+        buttons : [$('.content .info.floating-button')],
+        closing : []
+    }
+    var upload_btns = {
+        nav : $('.content .upload.container'),
+        buttons : [$('.content .upload.floating-button')],
+        closing : [$('.content .upload.container .button.button-red')]
     }
 
     var nav_btns = [
-    	login_btns,
-    	register_btns,
-    	friends_btns
+        login_btns,
+        register_btns,
+        friends_btns,
+        info_btns,
+        upload_btns
     ];
 
+    hideNav(nav_btns);
+
     for(var i = 0; i < nav_btns.length; i = i + 1) {
-    	var nav_and_btns = nav_btns[i];
-    	if(!anyClicked(nav_and_btns, e))
-    		nav_and_btns.nav.addClass('hidden');
+        var nav_and_btns = nav_btns[i];
+        var nav = nav_and_btns.nav,
+            buttons = nav_and_btns.buttons,
+            closing = nav_and_btns.closing;
+
+        // Clicking on the navigation element shouldn't close it.
+        if(target.parents().andSelf().is(nav)) {
+            nav.removeClass('hidden');
+        } 
+
+        // Clicking its buttons again shouldn't close it either.
+        for(var j = 0; j < buttons.length; j = j + 1) {
+            if(target.parents().andSelf().is(buttons[j]))
+                nav.removeClass('hidden');
+        }
+
+        // Clicking on its closing elements, however, should
+        for(var j = 0; j < closing.length; j = j + 1) {
+            if(target.parents().andSelf().is(closing[j]))
+                nav.addClass('hidden');
+        }
     }
-});
+})

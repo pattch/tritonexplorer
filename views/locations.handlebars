@@ -45,15 +45,26 @@
 
 		<div class="info container hidden">
 			<h3>{{locations_to_show.name}}</h3>
-			<p class="description">Description: {{locations_to_show.description}}</p>
-			<p class="tags">Tags:</p>
+			<p class="description">
+				<span class="title">description</span>
+				{{locations_to_show.description}}
+			</p>
+			<p class="tags">
+				<span class="title">tags</span>
+				{{#each locations_to_show.tags}}
+					<span class="tag">{{this}}</span>
+				{{/each}}
+			</p>
 			<div class="extra-info">
-				<span class="rating">Rating: {{location_to_show.rating}}</span>
-				<span class="location">
-					Location:
-					<span class="lat">{{{location_to_show.lat}}}</span>
-					<span class="lng">{{location_to_show.lng}}</span>
-				</span>
+				<p class="rating">
+					<span class="title">rating</span>
+					{{locations_to_show.rating}}
+				</p>
+				<p class="location">
+					<span class="title">gps</span>
+					<span class="lat">{{locations_to_show.lat}}</span>
+					<span class="lng">{{locations_to_show.lng}}</span>
+				</p>
 			</div>
 		</div>
 	</div>
@@ -111,7 +122,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="/js/map-control.js"></script>
 	<script src="/js/account-control.js"></script>
-	<script src="/js/location.js"></script>
 	<script src="/js/popup.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB82M8lTcnbfwp8lvbLN1Q30LLWAX2I-zE&libraries=places&callback=initMap"></script>
 </body>
