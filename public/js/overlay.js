@@ -16,14 +16,11 @@ function initializeLoginOverlay() {
 
   if(clicked==1 || accountID != -1){
     $('#overlay').addClass('hidden');
-    console.log(clicked);
+    // console.log(clicked);
   }
-  console.log(clicked);
 
-  console.log("Inside overlay");
 	var login_btn = $('#login');
 	var guest_btn = $('#guest');
-
 
 	login_btn.click(function() {
     clicked = 1;

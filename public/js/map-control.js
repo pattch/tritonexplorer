@@ -115,5 +115,3 @@ function onGeoSuccess(event) {
 function onGeoError(event) {
 	alert("Error code " + event.code + ". " + event.message);
 }
-
-

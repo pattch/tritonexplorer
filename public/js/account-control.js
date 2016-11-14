@@ -10,6 +10,7 @@ $(document).ready(function() {
 	initializeAboutPageNavigation();
     initializeRegistration();
     redirectForAccount();
+    fadeNavMessages();
 });
 
 function getAccountID() {
@@ -174,6 +175,14 @@ function redirectForAccount() {
     }
 }
 
+function fadeNavMessages() {
+    var messages = $('.content .fading.message');
+
+    messages.each(function() {
+        messages.delay(10000).fadeOut(1000);
+    });
+}
+
 function hideNav(nav_btns) {
     for(var i = 0; i < nav_btns.length; i = i + 1) {
         var nav_and_btns = nav_btns[i];
@@ -210,13 +219,19 @@ $(document).click(function(event) {
         buttons : [$('.content .upload.floating-button')],
         closing : [$('.content .upload.container .button.button-red')]
     }
+    var message_btns = {
+        nav : $('.content .fading.message'),
+        buttons : [$(document)],
+        closing : []
+    }
 
     var nav_btns = [
         login_btns,
         register_btns,
         friends_btns,
         info_btns,
-        upload_btns
+        upload_btns,
+        message_btns
     ];
 
     hideNav(nav_btns);

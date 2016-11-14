@@ -24,7 +24,9 @@ exports.add = function(req, res) {
 	var title = body.title,
 		tags = body.tags,
 		rating = body.rating,
-		description = body.description;
+		description = body.description,
+		lat = body.lat,
+		lng = body.lng;
 
 	var id = loaded_locations.locations.length + 1;
 
@@ -33,14 +35,17 @@ exports.add = function(req, res) {
 		"name": title,
 		"tags": tags,
 		"rating": rating,
-		"description": description
+		"description": description,
+		"lat": lat,
+		"lng": lng
 	};
 	loaded_locations.locations.push(location)
 	// console.log(loaded_locations);
 
   	var locations_to_show = location;
   	var data = {locations_to_show : locations_to_show,
-  		locations : loaded_locations.locations};
+  		locations : loaded_locations.locations,
+  		uploaded : true};
 
 	res.render('locations', data);
 }

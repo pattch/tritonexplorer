@@ -5,6 +5,7 @@
 <head>
 	<title>Triton Explorer</title>
 	<link href="/css/tex.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 
 <body>
@@ -22,22 +23,49 @@
 		</div>
 
 		<div class="upload container hidden">
-			<h4>Found a New&amp;Cool Event or Location on Campus? Share it Now!</h4>
+			<h4>Found a New&amp;Cool Event or Location on Campus? <br/>Share it Now!</h4>
 
-            <button>Add a Photo Here(More XP!)</button>
+            <div class="add-photo">
+                <br/>
+                <a href="/" style="text-decoration: none; color:white">Add a Photo Here(More XP!)</a>
+            </div>
 
-			<form action="/" method="post">
+			<form action="../" method="post">
 				Title: <input type="text" name="title" /><br />
 				Tags: <input type="text" name="tags" /><br />
-				Rating: (1-5) <input type="number" name="rating" min="1" max="5" /><br />
+				Rating: (1-5)
+                <!--<input type="number" name="rating" min="1" max="5" /> -->
+                <span class="starRating">
+                    <input id="rating5" type="radio" name="rating" value="5">
+                    <label for="rating5">5</label>
+                    <input id="rating4" type="radio" name="rating" value="4">
+                    <label for="rating4">4</label>
+                    <input id="rating3" type="radio" name="rating" value="3">
+                    <label for="rating3">3</label>
+                    <input id="rating2" type="radio" name="rating" value="2">
+                    <label for="rating2">2</label>
+                    <input id="rating1" type="radio" name="rating" value="1">
+                    <label for="rating1">1</label>
+                </span>
+                <br />
 				Description: <input type="text" name="description" /><br />
-				Latitude: <input type="text" id="input-lat" name="lat" /> Longitude: <input type="text" id="input-lng" name="lng" /><input type="button" value="Detect Location" onclick="getGeoLocationConst()" /><br />
+				Latitude: 
+				<input type="text" id="input-lat" name="lat" value="32.8786" />
+				Longitude:
+				<input type="text" id="input-lng" name="lng" value="-117.2359" />
+				<input type="button" value="Detect Location" onclick="getGeoLocationConst()" /><br />
 				<center>
                     <button type="submit" id="add-location" class="button button-green">Submit</button>
                     <span class="button button-red">Cancel</span>
                 </center>
 			</form>
 		</div>
+
+		{{#if uploaded}}
+		<div class="uploaded fading message">
+			Thanks for adding <span class="title">{{locations_to_show.name}}</span> to the map! We're working on adding experience points for adding locations, but for now all we can say is thanks for keeping the triton explorer map up to date!
+		</div>
+		{{/if}}
 
 		<div class="info floating-button">
 			<img src="/images/info.png" style="width:40px; height:40px">
@@ -122,7 +150,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="/js/map-control.js"></script>
 	<script src="/js/account-control.js"></script>
-	<script src="/js/popup.js"></script>
+	<script src="/js/overlay.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB82M8lTcnbfwp8lvbLN1Q30LLWAX2I-zE&libraries=places&callback=initMap"></script>
 </body>
 </html>
