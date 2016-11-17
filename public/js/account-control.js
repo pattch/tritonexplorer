@@ -138,10 +138,14 @@ function changePassword(accountid,oldpassword,newpassword,confirmpassword) {
         // console.log(data["set"]);
         var success = data["set"];
         var msg = data["msg"];
-        if(success)
+        if(success) {
             response_msg.addClass("success");
-        else
+            response_msg.removeClass("failure");
+        }
+        else {
             response_msg.addClass("failure");
+            response_msg.removeClass("success");
+        }
         response_msg.text(msg);
     });
 }
@@ -155,11 +159,25 @@ function initializeChangePassword() {
         var confirmpassword = $('#changePasswordForm .confirm.password').val();
 
         // TODO: Filter password changes here
-
-        // console.log(oldpassword);
         accountID = getAccountID();
-        if(typeof accountID != "undefined" && accountID != -1)
+        var goodId = (typeof accountID != "undefined" && accountID != -1);
+        var goodOldPass = (typeof oldpassword != "undefined" && oldpassword.length != 0);
+        var goodNewPass = (typeof newpassword != "undefined" && newpassword.length != 0);
+        var goodConfPass = (typeof confirmpassword != "undefined" && confirmpassword.length != 0);
+        var goodMatching = (goodNewPass && goodConfPass && newpassword == oldpassword);
+
+        var response_msg = $('#changePasswordForm .response-msg');
+        if(!goodOldPass && !goodMatching) {
+            response_msg.text("Please enter your current password and a new password.");
+            response_msg.removeClass("success");
+            response_msg.addClass("failure");
+        } else if(!goodMatching) {
+            response_msg.text("Passwords do not match.");
+            response_msg.removeClass("success");
+            response_msg.addClass("failure");
+        } else if(goodId) {
             changePassword(accountID,oldpassword,newpassword,confirmpassword);
+        }
     });
 }
 
