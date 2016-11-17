@@ -196,8 +196,8 @@ $(document).click(function(event) {
     // console.log(target);
     var login_btns = {
         nav : $('#loginform'),
-        buttons : [$('.header .nav-left.login')],
-        closing : []
+        buttons : [$('.header .nav-left.login'), $('#overlay .login.button')],
+        closing : [$('#loginform .cancel.button')]
     }
     var register_btns = {
         nav : $('#registerform'),
