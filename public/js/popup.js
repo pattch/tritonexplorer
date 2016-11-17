@@ -1,5 +1,5 @@
 'use strict';
-$(document).ready(initLikeButtons());
+// $(document).ready(initLikeButtons());
 
 function openlogin(){
   document.getElementById('registerform').style.display="none";
@@ -42,24 +42,24 @@ function hideregister(){
      }
  }
 
-function initLikeButtons() {
-  var recommendations = $('.recommendation');
-  recommendations.each(function(index) {
-    // console.log($(this));
-    var like = $(this).find('.button.like');
-    var dislike = $(this).find('.button.dislike');
+// function initLikeButtons() {
+//   var recommendations = $('.recommendation');
+//   recommendations.each(function(index) {
+//     // console.log($(this));
+//     var like = $(this).find('.button.like');
+//     var dislike = $(this).find('.button.dislike');
 
-    like.click(function() {
-      like.toggleClass('highlight');
-      dislike.removeClass('highlight');
-    });
+//     like.click(function() {
+//       like.toggleClass('highlight');
+//       dislike.removeClass('highlight');
+//     });
 
-    dislike.click(function() {
-      dislike.toggleClass('highlight');
-      like.removeClass('highlight');
-    });
-  });
-}
+//     dislike.click(function() {
+//       dislike.toggleClass('highlight');
+//       like.removeClass('highlight');
+//     });
+//   });
+// }
 
 
 var friendCount=1;
