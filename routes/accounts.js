@@ -17,6 +17,8 @@ exports.login = function(req, res) {
 
 	var response = {};
 
+	var logged_in_account = {};
+
 	for(var i = 0; i < accounts.length; i = i + 1) {
 		var account = accounts[i];
 		var acc_username = account["username"];
@@ -26,9 +28,20 @@ exports.login = function(req, res) {
 		if(username === acc_username
 			&& password === acc_password) {
 			console.log("Found! ID: " + acc_id);
+			logged_in_account = account;
 			response = account;
 		}
 	}
+
+	var lastlogin = new Date(logged_in_account["lastlogin"]),
+		currentDate = new Date(),
+		date = new Date();
+
+	if(lastlogin.setHours(0,0,0,0) != currentDate.setHours(0,0,0,0)) {
+		logged_in_account["experience"] = logged_in_account["experience"] + 50;
+	}
+
+	logged_in_account["lastlogin"] = date.toString();
 
 	res.json(response);
 }
@@ -39,7 +52,8 @@ exports.register = function(req, res) {
 		password = body.password,
 		name = body.name,
 		email = body.email,
-		college = body.college;
+		college = body.college,
+		lastlogin = new Date();
 
 	var id = loaded_accounts.accounts.length + 1;
 
@@ -53,7 +67,9 @@ exports.register = function(req, res) {
 		"img-url": "/images/profile_man.png",
 		"username": username,
 		"password": password,
-		"email": email
+		"email": email,
+		"experience": 0,
+		"lastlogin": lastlogin
 	};
 
 	console.log(account);
