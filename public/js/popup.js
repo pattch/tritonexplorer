@@ -110,7 +110,7 @@ function hideHelp(){
   document.getElementById('helpForm').style.display="none";
 }
 
-//Handle login data from login form
+/*//Handle login data from login form
 $.fn.serializeObject = function()
 {
     var o = {};
@@ -133,4 +133,4 @@ $(function() {
         $('#result').text(JSON.stringify($('loginform').serializeObject()));
         return false;
     });
-});
+});*/
