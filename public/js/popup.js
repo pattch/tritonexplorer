@@ -93,12 +93,15 @@ function hideChangePassword(){
 
 function openManageFriend(){
   document.getElementById('changePasswordForm').style.display="none";
-  $('#manageFriendForm').removeClass('hidden');
+  //$('#manageFriendForm').removeClass('hidden');
+  document.getElementById('manageFriendForm').style.display="block";
 }
 
 function hideManageFriend(){
   document.getElementById('changePasswordForm').style.display="none";
-  $('#manageFriendForm').addClass('hidden');
+  //$('#manageFriendForm').addClass('hidden');
+  document.getElementById('manageFriendForm').style.display="none";
+
 }
 function openHelp(){
   document.getElementById('helpForm').style.display="block";
