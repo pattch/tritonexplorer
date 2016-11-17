@@ -111,8 +111,8 @@ function registerNewUser(username,password,name,email,college) {
     console.log(account);
     $.post(registrationURL, account)
     .done(function( data ) {
-        console.log(data);
-        console.log(data["id"]);
+        // console.log(data);
+        // console.log(data["id"]);
         // Create a cookie with the account id here.
         // console.log(data[id]);
         document.cookie = "accountID=" + data["id"] + ";max-age=31536000;path=/";
@@ -122,16 +122,27 @@ function registerNewUser(username,password,name,email,college) {
 
 function changePassword(accountid,oldpassword,newpassword,confirmpassword) {
     var changePasswordURL = "/accounts/password/";
+    var response_msg = $('#changePasswordForm .response-msg');
+
     var changepassword = {
         accountid: accountid,
         oldpassword: oldpassword,
         newpassword: newpassword,
         confirmpassword: confirmpassword
     };
+
     console.log(changepassword);
     $.post(changePasswordURL, changepassword)
     .done(function( data ) {
-        console.log(data);
+        // console.log(data);
+        // console.log(data["set"]);
+        var success = data["set"];
+        var msg = data["msg"];
+        if(success)
+            response_msg.addClass("success");
+        else
+            response_msg.addClass("failure");
+        response_msg.text(msg);
     });
 }
 

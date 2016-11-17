@@ -96,7 +96,7 @@ exports.changepassword = function(req, res) {
 		var account = accounts[i];
 		var acc_id = account["id"];
 		var password = account["password"];
-		
+
 		if(accountid == acc_id) {
 			// console.log("Found " + accountid);
 
@@ -108,7 +108,7 @@ exports.changepassword = function(req, res) {
 			} else {
 				response = {
 					"set": false,
-					"msg": "No account found with that username and password."
+					"msg": "Sorry, incorrect password entered."
 				}
 			}
 			
@@ -118,7 +118,7 @@ exports.changepassword = function(req, res) {
 	if(passwordchanged) {
 		response = {
 			"set": true,
-			"msg": "Account password successfully changed."
+			"msg": "Password successfully changed."
 		}
 	}
 

@@ -119,10 +119,20 @@
   <div id="changePasswordForm" class="changePasswordBox hidden">
     <!-- <form action="/" method="post"> -->
         <!-- <div> -->
-        <center>Change Password</center>
-        Old Password:<input type="text" name="oldpassword" class="old password"><br>
-        New Password:<input type="text" name="newpassword" class="new password"><br>
-        Confirm New Password:<input type="text" name="confirmpassword" class="confirm password"><br>
+        <h3>Change Password</h3>
+        <p class="response-msg"></p>
+        <p>
+          <span class="title">old password</span>
+          <input type="text" name="oldpassword" class="old password">
+        </p>
+        <p>
+          <span class="title">new password</span>
+          <input type="text" name="newpassword" class="new password">
+        </p>
+        <p>
+          <span class="title">confirm new password</span>
+          <input type="text" name="confirmpassword" class="confirm password">
+        </p>
         <center>
           <span id="change-password" class="change button button-green">change password</span>
           <span id="change-cancel" class="cancel button button-red" onclick="hideChangePassword()">cancel</span>
