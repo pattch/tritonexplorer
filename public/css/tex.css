@@ -465,7 +465,8 @@ input[type=button], select {
 }
 
 .content .info.container p,
-.content .upload.container p {
+.content .upload.container p,
+#changePasswordForm p {
   /*margin: 10px 0 35px 0; This make the upload form
     look like shit sorry*/
     text-align: right;
@@ -475,7 +476,8 @@ input[type=button], select {
 }
 
 .content .info.container .title,
-.content .upload.container .title {
+.content .upload.container .title,
+#changePasswordForm .title {
     font-weight: 700;
     color: #444;
     float:left;
@@ -484,11 +486,35 @@ input[type=button], select {
 }
 
 .content .info.container h3,
-.content .upload.container h3 {
+.content .upload.container h3,
+#changePasswordForm h3 {
   text-align: center;
   font-family: sans-serif;
   font-weight: 100;
   color: #286DA8;
+}
+
+#loginform .response-msg {
+  width: 100%;
+}
+
+#changePasswordForm .response-msg,
+#loginform .response-msg {
+  text-align: center;
+  margin: 0 15px;
+}
+
+#changePasswordForm .response-msg.failure,
+#loginform .response-msg.failure {
+  /*font-weight: 700;*/
+  color: #f03;
+}
+
+#changePasswordForm .response-msg.success,
+#loginform .response-msg.success {
+  font-family: sans-serif;
+  font-weight: 300;
+  color: #78AB46;
 }
 
 .content .info.container .tag {

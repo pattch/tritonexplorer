@@ -14,9 +14,9 @@ function initializeLoginOverlay() {
   clicked = getCookie("clicked");
   account = getCookie("accountID");
 
-  if(clicked==1 || accountID != -1){
+  if(clicked==1 || (typeof account != "undefined" && account != -1)){
     $('#overlay').addClass('hidden');
-    // console.log(clicked);
+    console.log(account);
   }
 
 	var login_btn = $('#login');

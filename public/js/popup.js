@@ -1,5 +1,5 @@
 'use strict';
-$(document).ready(initLikeButtons());
+// $(document).ready(initLikeButtons());
 
 function openlogin(){
   document.getElementById('registerform').style.display="none";
@@ -42,24 +42,24 @@ function hideregister(){
      }
  }
 
-function initLikeButtons() {
-  var recommendations = $('.recommendation');
-  recommendations.each(function(index) {
-    // console.log($(this));
-    var like = $(this).find('.button.like');
-    var dislike = $(this).find('.button.dislike');
+// function initLikeButtons() {
+//   var recommendations = $('.recommendation');
+//   recommendations.each(function(index) {
+//     // console.log($(this));
+//     var like = $(this).find('.button.like');
+//     var dislike = $(this).find('.button.dislike');
 
-    like.click(function() {
-      like.toggleClass('highlight');
-      dislike.removeClass('highlight');
-    });
+//     like.click(function() {
+//       like.toggleClass('highlight');
+//       dislike.removeClass('highlight');
+//     });
 
-    dislike.click(function() {
-      dislike.toggleClass('highlight');
-      like.removeClass('highlight');
-    });
-  });
-}
+//     dislike.click(function() {
+//       dislike.toggleClass('highlight');
+//       like.removeClass('highlight');
+//     });
+//   });
+// }
 
 
 var friendCount=1;
@@ -93,12 +93,15 @@ function hideChangePassword(){
 
 function openManageFriend(){
   document.getElementById('changePasswordForm').style.display="none";
-  $('#manageFriendForm').removeClass('hidden');
+  //$('#manageFriendForm').removeClass('hidden');
+  document.getElementById('manageFriendForm').style.display="block";
 }
 
 function hideManageFriend(){
   document.getElementById('changePasswordForm').style.display="none";
-  $('#manageFriendForm').addClass('hidden');
+  //$('#manageFriendForm').addClass('hidden');
+  document.getElementById('manageFriendForm').style.display="none";
+
 }
 function openHelp(){
   document.getElementById('helpForm').style.display="block";
@@ -107,7 +110,7 @@ function hideHelp(){
   document.getElementById('helpForm').style.display="none";
 }
 
-//Handle login data from login form
+/*//Handle login data from login form
 $.fn.serializeObject = function()
 {
     var o = {};
@@ -130,4 +133,4 @@ $(function() {
         $('#result').text(JSON.stringify($('loginform').serializeObject()));
         return false;
     });
-});
+});*/

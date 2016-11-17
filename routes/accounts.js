@@ -9,13 +9,15 @@ exports.login = function(req, res) {
 	var username = body.username,
 		password = body.password;
 
-	console.log(body);
-	console.log(username);
-	console.log(password);
+	// console.log(body);
+	// console.log(username);
+	// console.log(password);
 
 	var accounts = loaded_accounts.accounts;
 
 	var response = {};
+	response["auth"] = false;
+	response["msg"] = "No account with that username found."
 
 	var logged_in_account = {};
 
@@ -25,25 +27,49 @@ exports.login = function(req, res) {
 		var acc_password = account["password"];
 		var acc_id = account["id"];
 
-		if(username === acc_username
-			&& password === acc_password) {
-			console.log("Found! ID: " + acc_id);
-			logged_in_account = account;
-			response = account;
+		if(username === acc_username) {
+			if(password === acc_password) {
+				logged_in_account = account;
+				response["account"] = account;
+				response["auth"] = true;
+				response["msg"] = "Successfully logged in, redirecting...";
+			} else {
+				response["msg"] = "Incorrect password."
+			}
 		}
 	}
 
-	var lastlogin = new Date(logged_in_account["lastlogin"]),
+	// Add experience points for logging in here.
+	if(response["auth"]) {
+		// var lastlogin = new Date(logged_in_account["lastlogin"]),
+		// 	currentDate = new Date(),
+		// 	date = new Date();
+
+		// if(lastlogin.setHours(0,0,0,0) != currentDate.setHours(0,0,0,0)) {
+		// 	logged_in_account["experience"] = logged_in_account["experience"] + 50;
+		// }
+
+		// logged_in_account["lastlogin"] = date.toString();
+		logged_in_account["experience"] += loginExperience(logged_in_account);
+		logged_in_account["lastlogin"] = (new Date()).toString();
+	}
+
+	console.log("Login attempt... Response:");
+	console.log(response);
+
+	res.json(response);
+}
+
+function loginExperience(account) {
+	var lastlogin = new Date(account["lastlogin"]),
 		currentDate = new Date(),
 		date = new Date();
 
 	if(lastlogin.setHours(0,0,0,0) != currentDate.setHours(0,0,0,0)) {
-		logged_in_account["experience"] = logged_in_account["experience"] + 50;
+		return 50;
 	}
 
-	logged_in_account["lastlogin"] = date.toString();
-
-	res.json(response);
+	return 0;
 }
 
 exports.register = function(req, res) {
@@ -77,4 +103,50 @@ exports.register = function(req, res) {
 	loaded_accounts.accounts.push(account);
 
 	res.json(account);
+}
+
+exports.changepassword = function(req, res) {
+	var body = req.body;
+	var accountid = body.accountid,
+		oldpassword = body.oldpassword,
+		newpassword = body.newpassword,
+		confirmpassword = body.confirmpassword,
+		accounts = loaded_accounts.accounts,
+		passwordchanged = false,
+		response = {
+			"set": false,
+			"msg": "Account not found."
+		};
+
+	for(var i = 0; i < accounts.length; i = i + 1) {
+		var account = accounts[i];
+		var acc_id = account["id"];
+		var password = account["password"];
+
+		if(accountid == acc_id) {
+			// console.log("Found " + accountid);
+
+			if(oldpassword == password
+				&& newpassword == confirmpassword 
+				&& newpassword.length != 0) {
+				account["password"] = newpassword;
+				passwordchanged = true;
+			} else {
+				response = {
+					"set": false,
+					"msg": "Sorry, incorrect password entered."
+				}
+			}
+			
+		}
+	}
+
+	if(passwordchanged) {
+		response = {
+			"set": true,
+			"msg": "Password successfully changed."
+		}
+	}
+
+	res.json(response);
 }

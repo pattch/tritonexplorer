@@ -10,7 +10,7 @@
 <body>
   <div class="header vert-bg">
       <p class="header">About Me</p>
-      <a href="/about/"><img class="header-icon" src="/images/notification.png" alt="Edit" style="width:40px;height:40px"></a>
+      <!-- <a href="/about/"><img class="header-icon" src="/images/notification.png" alt="Edit" style="width:40px;height:40px"></a> -->
   </div>
 
   <div class="content scroll">
@@ -20,9 +20,9 @@
       <center>
         <img src="{{account.img-url}}" alt=""style="width:100px;height:100px">
         <br><span class="name">{{account.name}}</span><br>
-        <br><span class="title">Entry Level Explorer</span><br>
-        <br>
-        <div class="w3-container" style="width:40%">
+        <br><span class="level">Level</span><br>
+        <br><span class="experience"></span><br>
+        <div class="w3-container" experience="{{account.experience}}" style="width:40%">
             <div class="w3-progress-container w3-round-large">
                 <div class="w3-progressbar w3-round-large w3-green" style="width:75%"></div>
             </div>
@@ -35,9 +35,9 @@
       <div class="nav">College: {{account.college}}</div>
       <div class="nav">Email: {{account.email}}</div>
       <br />
-      <div class="nav" id="manage-friends">Manage Friends</div>
+      <!-- <div class="nav" id="manage-friends">Manage Friends</div> -->
       <div class="nav" onclick="openChangePassword()">Change Password</div>
-      <div class="nav" onclick="openHelp()">Help &amp; Support</div>
+      <!-- <div class="nav" onclick="openHelp()">Help &amp; Support</div> -->
       <br />
       <br />
       <br />
@@ -73,7 +73,7 @@
       <div class="nav">College: Eleanor Roosevelt</div>
       <div class="nav">Email: sample@ucsd.edu</div>
       <br />
-      <div class="nav" id="manage-friends">Manage Friends</div>
+      <!--<div class="nav" id="manage-friends">Manage Friends</div>-->
       <div class="nav" onclick="openChangePassword()">Change Password</div>
       <div class="nav" onclick="openHelp()">Help &amp; Support</div>
       <br />
@@ -120,17 +120,29 @@
 	</div>
 
   <!--Change Password form-->
-  <div  id="changePasswordForm" class="changePasswordBox hidden">
-    <form action="/" method="post"> <!--need to change action-->
-        <div>
-        <center>Change Password</center>
-        Old Password:<input type="text"><br>
-        New Password:<input type="text"><br>
-        Confirm New Password:<input type="text"><br>
-        <center><input id="login-submit" type="button" onclick="hideChangePassword()" value="submit"/>
-        <input id="login-cancel" type="button" onclick="hideChangePassword()" value="cancel"/></center>
-      </div>
-    </form>
+  <div id="changePasswordForm" class="changePasswordBox hidden">
+    <!-- <form action="/" method="post"> -->
+        <!-- <div> -->
+        <h3>Change Password</h3>
+        <p class="response-msg"></p>
+        <p>
+          <span class="title">old password</span>
+          <input type="text" name="oldpassword" class="old password">
+        </p>
+        <p>
+          <span class="title">new password</span>
+          <input type="text" name="newpassword" class="new password">
+        </p>
+        <p>
+          <span class="title">confirm new password</span>
+          <input type="text" name="confirmpassword" class="confirm password">
+        </p>
+        <center>
+          <span id="change-password" class="change button button-green">change password</span>
+          <span id="change-cancel" class="cancel button button-red" onclick="hideChangePassword()">cancel</span>
+        </center>
+      <!-- </div> -->
+    <!-- </form> -->
   </div>
 
   <!--Manage Friend form-->

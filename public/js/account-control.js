@@ -9,6 +9,7 @@ $(document).ready(function() {
 	initializeLikeButtons();
 	initializeAboutPageNavigation();
     initializeRegistration();
+    initializeChangePassword();
     redirectForAccount();
     fadeNavMessages();
 });
@@ -74,12 +75,32 @@ function authenticateByUsername(username,password) {
     var accountsURL = "/accounts/";
     $.post( accountsURL, { username: username, password: password })
     .done(function( data ) {
-        console.log(data);
-        console.log(data["id"]);
-        // Create a cookie with the account id here.
-        // console.log(data[id]);
-        document.cookie = "accountID=" + data["id"] + ";max-age=31536000;path=/";
-        location.reload();
+        var auth = data["auth"];
+        var msg = data["msg"];
+        var message_congainer = $('#loginform .response-msg');
+        message_congainer.text(msg);
+
+        if(auth) {
+            var account = data["account"];
+            var accountID = account["id"];
+            console.log(msg);
+            if(typeof accountID == "undefined") {
+                msg = "Something went wrong, please try again."
+                message_congainer.addClass('failure');
+                message_congainer.removeClass('success');
+                message_congainer.text(msg);
+            } else {
+                document.cookie = "accountID=" + accountID + ";max-age=31536000;path=/";
+                message_congainer.addClass('success');
+                message_congainer.removeClass('failure');
+                setTimeout(function() {
+                    location.reload();
+                }, 2000);
+            }
+        } else {
+            message_congainer.addClass('failure');
+            message_congainer.addClass('success');
+        }
     });
 }
 
@@ -108,14 +129,75 @@ function registerNewUser(username,password,name,email,college) {
         college: college
     };
     console.log(account);
-    $.post( registrationURL, account)
+    $.post(registrationURL, account)
     .done(function( data ) {
-        console.log(data);
-        console.log(data["id"]);
+        // console.log(data);
+        // console.log(data["id"]);
         // Create a cookie with the account id here.
         // console.log(data[id]);
         document.cookie = "accountID=" + data["id"] + ";max-age=31536000;path=/";
         location.reload();
+    });
+}
+
+function changePassword(accountid,oldpassword,newpassword,confirmpassword) {
+    var changePasswordURL = "/accounts/password/";
+    var response_msg = $('#changePasswordForm .response-msg');
+
+    var changepassword = {
+        accountid: accountid,
+        oldpassword: oldpassword,
+        newpassword: newpassword,
+        confirmpassword: confirmpassword
+    };
+
+    console.log(changepassword);
+    $.post(changePasswordURL, changepassword)
+    .done(function( data ) {
+        // console.log(data);
+        // console.log(data["set"]);
+        var success = data["set"];
+        var msg = data["msg"];
+        if(success) {
+            response_msg.addClass("success");
+            response_msg.removeClass("failure");
+        }
+        else {
+            response_msg.addClass("failure");
+            response_msg.removeClass("success");
+        }
+        response_msg.text(msg);
+    });
+}
+
+function initializeChangePassword() {
+    var change_btn = $('#changePasswordForm .change.button');
+
+    change_btn.click(function() {
+        var oldpassword = $('#changePasswordForm .old.password').val();
+        var newpassword = $('#changePasswordForm .new.password').val();
+        var confirmpassword = $('#changePasswordForm .confirm.password').val();
+
+        // TODO: Filter password changes here
+        accountID = getAccountID();
+        var goodId = (typeof accountID != "undefined" && accountID != -1);
+        var goodOldPass = (typeof oldpassword != "undefined" && oldpassword.length != 0);
+        var goodNewPass = (typeof newpassword != "undefined" && newpassword.length != 0);
+        var goodConfPass = (typeof confirmpassword != "undefined" && confirmpassword.length != 0);
+        var goodMatching = (goodNewPass && goodConfPass && newpassword == confirmpassword);
+
+        var response_msg = $('#changePasswordForm .response-msg');
+        if(!goodOldPass && !goodMatching) {
+            response_msg.text("Please enter your current password and a new password.");
+            response_msg.removeClass("success");
+            response_msg.addClass("failure");
+        } else if(!goodMatching) {
+            response_msg.text("Passwords do not match.");
+            response_msg.removeClass("success");
+            response_msg.addClass("failure");
+        } else if(goodId) {
+            changePassword(accountID,oldpassword,newpassword,confirmpassword);
+        }
     });
 }
 
@@ -143,6 +225,62 @@ function initializeAboutPageNavigation() {
 	mng_friends.click(function() {
 		$('#manageFriendForm').removeClass('hidden');
 	})
+
+    setExperienceBarProgress();
+    setLevelNumber();
+}
+// Jiaming
+function calculateLevelWithRemainder() {
+    // Use some formula to calculate the level of the user based on experience
+    // level = function(experience)
+
+    // useful
+    var experience_string = $('.content .profile.card .w3-container').attr('experience');
+    var experience = parseInt(experience_string);
+    var level;
+
+    level = Math.log(experience);
+    console.log('level'+level);
+    return level;
+
+}
+
+function calculateLevel() {
+    // Here, call calculateLevelWithRemainder, remove the remainder
+    var level_round = calculateLevelWithRemainder();
+    level_round = Math.floor(level_round);
+    console.log('level_round'+level_round);
+    return level_round;
+}
+
+function setExperienceBarProgress() {
+    // Here, calculate the level with remainder, the remainder part should be a fraction
+    // use the fraction to set the width of the experience bar
+    var experience_bar = $('.content .profile.card .w3-container .w3-progressbar');
+
+    // calculate fraction here
+    var width = calculateLevel() / calculateLevelWithRemainder();
+    if (calculateLevel()<0){
+      width = 0;
+    }
+    var num = width*100;
+    width = num.toFixed(2);
+    console.log('width'+width);
+
+    var width_string = width.toString();
+    console.log('width-string'+width_string);
+    width_string = width_string+'%';
+    console.log('width-string'+width_string);
+    experience_bar.width(width_string); // use fraction as percentage here
+}
+
+function setLevelNumber(){
+  var level = $('.content.scroll .profile.card .level');
+  var num =calculateLevel();
+  if(num<0){
+    num = 0;
+  }
+  level.text("Level: "+ num);
 }
 
 function anyClicked(form_and_btns, e) {
@@ -245,7 +383,7 @@ $(document).click(function(event) {
         // Clicking on the navigation element shouldn't close it.
         if(target.parents().andSelf().is(nav)) {
             nav.removeClass('hidden');
-        } 
+        }
 
         // Clicking its buttons again shouldn't close it either.
         for(var j = 0; j < buttons.length; j = j + 1) {
