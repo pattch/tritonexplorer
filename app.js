@@ -63,6 +63,8 @@ app.get('/locations/all/', locations.all);
 app.post('/accounts/', accounts.login);
 // Route signing up
 app.post('/accounts/register/', accounts.register);
+// Route for changing password
+app.post('/accounts/password/', accounts.changepassword);
 
 // About Me Page
 app.get('/about/', about.view);

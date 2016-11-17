@@ -9,6 +9,7 @@ $(document).ready(function() {
 	initializeLikeButtons();
 	initializeAboutPageNavigation();
     initializeRegistration();
+    initializeChangePassword();
     redirectForAccount();
     fadeNavMessages();
 });
@@ -108,7 +109,7 @@ function registerNewUser(username,password,name,email,college) {
         college: college
     };
     console.log(account);
-    $.post( registrationURL, account)
+    $.post(registrationURL, account)
     .done(function( data ) {
         console.log(data);
         console.log(data["id"]);
@@ -116,6 +117,38 @@ function registerNewUser(username,password,name,email,college) {
         // console.log(data[id]);
         document.cookie = "accountID=" + data["id"] + ";max-age=31536000;path=/";
         location.reload();
+    });
+}
+
+function changePassword(accountid,oldpassword,newpassword,confirmpassword) {
+    var changePasswordURL = "/accounts/password/";
+    var changepassword = {
+        accountid: accountid,
+        oldpassword: oldpassword,
+        newpassword: newpassword,
+        confirmpassword: confirmpassword
+    };
+    console.log(changepassword);
+    $.post(changePasswordURL, changepassword)
+    .done(function( data ) {
+        console.log(data);
+    });
+}
+
+function initializeChangePassword() {
+    var change_btn = $('#changePasswordForm .change.button');
+
+    change_btn.click(function() {
+        var oldpassword = $('#changePasswordForm .old.password').val();
+        var newpassword = $('#changePasswordForm .new.password').val();
+        var confirmpassword = $('#changePasswordForm .confirm.password').val();
+
+        // TODO: Filter password changes here
+
+        // console.log(oldpassword);
+        accountID = getAccountID();
+        if(typeof accountID != "undefined" && accountID != -1)
+            changePassword(accountID,oldpassword,newpassword,confirmpassword);
     });
 }
 

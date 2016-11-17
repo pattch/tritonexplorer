@@ -10,7 +10,7 @@
 <body>
   <div class="header vert-bg">
       <p class="header">About Me</p>
-      <a href="/about/"><img class="header-icon" src="/images/notification.png" alt="Edit" style="width:40px;height:40px"></a>
+      <!-- <a href="/about/"><img class="header-icon" src="/images/notification.png" alt="Edit" style="width:40px;height:40px"></a> -->
   </div>
 
   <div class="content scroll">
@@ -35,9 +35,9 @@
       <div class="nav">College: {{account.college}}</div>
       <div class="nav">Email: {{account.email}}</div>
       <br />
-      <div class="nav" id="manage-friends">Manage Friends</div>
+      <!-- <div class="nav" id="manage-friends">Manage Friends</div> -->
       <div class="nav" onclick="openChangePassword()">Change Password</div>
-      <div class="nav" onclick="openHelp()">Help &amp; Support</div>
+      <!-- <div class="nav" onclick="openHelp()">Help &amp; Support</div> -->
       <br />
       <br />
       <br />
@@ -116,17 +116,19 @@
 	</div>
 
   <!--Change Password form-->
-  <div  id="changePasswordForm" class="changePasswordBox hidden">
-    <form action="/" method="post"> <!--need to change action-->
-        <div>
+  <div id="changePasswordForm" class="changePasswordBox hidden">
+    <!-- <form action="/" method="post"> -->
+        <!-- <div> -->
         <center>Change Password</center>
-        Old Password:<input type="text"><br>
-        New Password:<input type="text"><br>
-        Confirm New Password:<input type="text"><br>
-        <center><input id="login-submit" type="button" onclick="hideChangePassword()" value="submit"/>
-        <input id="login-cancel" type="button" onclick="hideChangePassword()" value="cancel"/></center>
-      </div>
-    </form>
+        Old Password:<input type="text" name="oldpassword" class="old password"><br>
+        New Password:<input type="text" name="newpassword" class="new password"><br>
+        Confirm New Password:<input type="text" name="confirmpassword" class="confirm password"><br>
+        <center>
+          <span id="change-password" class="change button button-green">change password</span>
+          <span id="change-cancel" class="cancel button button-red" onclick="hideChangePassword()">cancel</span>
+        </center>
+      <!-- </div> -->
+    <!-- </form> -->
   </div>
 
   <!--Manage Friend form-->

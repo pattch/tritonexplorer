@@ -78,3 +78,49 @@ exports.register = function(req, res) {
 
 	res.json(account);
 }
+
+exports.changepassword = function(req, res) {
+	var body = req.body;
+	var accountid = body.accountid,
+		oldpassword = body.oldpassword,
+		newpassword = body.newpassword,
+		confirmpassword = body.confirmpassword,
+		accounts = loaded_accounts.accounts,
+		passwordchanged = false,
+		response = {
+			"set": false,
+			"msg": "Account not found."
+		};
+
+	for(var i = 0; i < accounts.length; i = i + 1) {
+		var account = accounts[i];
+		var acc_id = account["id"];
+		var password = account["password"];
+		
+		if(accountid == acc_id) {
+			// console.log("Found " + accountid);
+
+			if(oldpassword == password
+				&& newpassword == confirmpassword 
+				&& newpassword.length != 0) {
+				account["password"] = newpassword;
+				passwordchanged = true;
+			} else {
+				response = {
+					"set": false,
+					"msg": "No account found with that username and password."
+				}
+			}
+			
+		}
+	}
+
+	if(passwordchanged) {
+		response = {
+			"set": true,
+			"msg": "Account password successfully changed."
+		}
+	}
+
+	res.json(response);
+}
