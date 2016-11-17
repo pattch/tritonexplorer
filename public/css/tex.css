@@ -512,7 +512,9 @@ input[type=button], select {
   border-radius: 5px;
   padding: 5px;
 }
-
+.login{
+	z-index: 1000;
+}
 .loginbox {
     position:absolute;
     top:10%;

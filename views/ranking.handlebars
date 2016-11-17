@@ -13,7 +13,7 @@
         <!-- <a href="/ranking/">
             <img id="ranking-icon" class="header-icon" src="/images/clock.png" alt="Time" style="width:40px; height:40px"/>
         </a> -->
-				<span class="nav-left login">log in</span>
+				<span class="nav-left login" >log in</span>
         <img class="logo" src="/images/logo.png" style="width:60px;height:60px;"/>
 	</div>
 
@@ -56,16 +56,19 @@
             </ol>
         </div>
 
-        <div  id="loginform" class="loginbox hidden">
-            <!--Login form-->
-            <h3>Login</h3>
-            username: <input type="text" id="username"><br />
-            password: <input type="text" id="password"><br />
-            <center>
-                <span id="login-submit" class="login button">login</span>
-                <span id="login-cancel" class="cancel button"/>cancel</span>
-            </center>
-        </div>
+				<div id="loginform" class="loginbox hidden">
+					<div class="authentication">
+						<!--Login form-->
+							<h3>Login</h3>
+							<p class="response-msg"></p>
+							username: <input type="text" id="username"><br />
+							password: <input type="text" id="password"><br />
+							<center>
+								<span id="login-submit" class="login button" >login</span>
+								<span id="login-cancel" class="cancel button"/>cancel</span>
+							</center>
+					</div>
+				</div>
 	</div>
 
 	<div class="footer vert-bg">
@@ -93,6 +96,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="/js/ranking.js"></script>
 	<script src="/js/popup.js"></script>
+	<script src="/js/overlay.js"></script>
     <script src="/js/account-control.js"></script>
 </body>
 </html>
