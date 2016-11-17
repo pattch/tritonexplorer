@@ -350,7 +350,7 @@ input[type=button], select {
 }
 .content .upload.container .starRating:not(old){
   display        : inline-block;
-  width          : 7.5em;
+  width          : 8em;
   height         : 1.5em;
   overflow       : hidden;
   vertical-align : bottom;
@@ -379,12 +379,9 @@ input[type=button], select {
   transition      : opacity 0.2s linear;
 }
 
-.content .upload.container.starRating:not(old)>label:hover:before{
-    opacity: 1;
-}
-.content .upload.container.starRating:not(old)>label:hover ~ label:before{
-    opacity: 1;
-}
+.content.upload.container.starRating:not(old)>label:hover:before,
+.content .upload.container.starRating:not(old)>label:hover ~ label:before,
+.content .upload.container .starRating:hover > :checked ~ label:before,
 .content .upload.container .starRating:not(:hover) > :checked ~ label:before{
   opacity : 1;
 }
