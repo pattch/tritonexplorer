@@ -221,10 +221,20 @@ function calculateLevelWithRemainder() {
     // useful
     var experience_string = $('.content .profile.card .w3-container').attr('experience');
     var experience = parseInt(experience_string);
+    var level;
+
+    level = Math.log(experience);
+    console.log('level'+level);
+    return level;
+
 }
 
 function calculateLevel() {
-    // Here, call calculateLevelWithRemainder, remove the remainder 
+    // Here, call calculateLevelWithRemainder, remove the remainder
+    var level_round = calculateLevelWithRemainder();
+    level_round = Math.floor(level_round);
+    console.log('level_round'+level_round);
+    return level_round;
 }
 
 function setExperienceBarProgress() {
@@ -233,8 +243,17 @@ function setExperienceBarProgress() {
     var experience_bar = $('.content .profile.card .w3-container .w3-progressbar');
 
     // calculate fraction here
+    var width = calculateLevel() / calculateLevelWithRemainder();
 
-    experience_bar.width('50%'); // use fraction as percentage here
+    var num = width*100;
+    width = num.toFixed(2);
+    console.log('width'+width);
+
+    var width_string = width.toString();
+    console.log('width-string'+width_string);
+    width_string = width_string+'%';
+    console.log('width-string'+width_string);
+    experience_bar.width(width_string); // use fraction as percentage here
 }
 
 function anyClicked(form_and_btns, e) {
@@ -337,7 +356,7 @@ $(document).click(function(event) {
         // Clicking on the navigation element shouldn't close it.
         if(target.parents().andSelf().is(nav)) {
             nav.removeClass('hidden');
-        } 
+        }
 
         // Clicking its buttons again shouldn't close it either.
         for(var j = 0; j < buttons.length; j = j + 1) {
