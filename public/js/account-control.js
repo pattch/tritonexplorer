@@ -210,6 +210,31 @@ function initializeAboutPageNavigation() {
 	mng_friends.click(function() {
 		$('#manageFriendForm').removeClass('hidden');
 	})
+
+    setExperienceBarProgress();
+}
+// Jiaming
+function calculateLevelWithRemainder() {
+    // Use some formula to calculate the level of the user based on experience
+    // level = function(experience)
+
+    // useful
+    var experience_string = $('.content .profile.card .w3-container').attr('experience');
+    var experience = parseInt(experience_string);
+}
+
+function calculateLevel() {
+    // Here, call calculateLevelWithRemainder, remove the remainder 
+}
+
+function setExperienceBarProgress() {
+    // Here, calculate the level with remainder, the remainder part should be a fraction
+    // use the fraction to set the width of the experience bar
+    var experience_bar = $('.content .profile.card .w3-container .w3-progressbar');
+
+    // calculate fraction here
+
+    experience_bar.width('50%'); // use fraction as percentage here
 }
 
 function anyClicked(form_and_btns, e) {
