@@ -483,17 +483,24 @@ input[type=button], select {
   color: #286DA8;
 }
 
-#changePasswordForm .response-msg {
+#loginform .response-msg {
+  width: 100%;
+}
+
+#changePasswordForm .response-msg,
+#loginform .response-msg {
   text-align: center;
   margin: 0 15px;
 }
 
-#changePasswordForm .response-msg.failure {
+#changePasswordForm .response-msg.failure,
+#loginform .response-msg.failure {
   /*font-weight: 700;*/
   color: #f03;
 }
 
-#changePasswordForm .response-msg.success {
+#changePasswordForm .response-msg.success,
+#loginform .response-msg.success {
   font-family: sans-serif;
   font-weight: 300;
   color: #78AB46;
