@@ -19,6 +19,8 @@ exports.login = function(req, res) {
 
 	var logged_in_account = {};
 
+	var foundAccount = false;
+
 	for(var i = 0; i < accounts.length; i = i + 1) {
 		var account = accounts[i];
 		var acc_username = account["username"];
@@ -30,9 +32,11 @@ exports.login = function(req, res) {
 			console.log("Found! ID: " + acc_id);
 			logged_in_account = account;
 			response = account;
+			foundAccount = true;
 		}
 	}
 
+	// if()
 	var lastlogin = new Date(logged_in_account["lastlogin"]),
 		currentDate = new Date(),
 		date = new Date();

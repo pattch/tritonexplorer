@@ -79,8 +79,13 @@ function authenticateByUsername(username,password) {
         console.log(data["id"]);
         // Create a cookie with the account id here.
         // console.log(data[id]);
-        document.cookie = "accountID=" + data["id"] + ";max-age=31536000;path=/";
-        location.reload();
+        var accountID = data["id"];
+        if(typeof accountID == "undefined") {
+
+        } else {
+            document.cookie = "accountID=" + data["id"] + ";max-age=31536000;path=/";
+            location.reload();
+        }
     });
 }
 
@@ -164,7 +169,7 @@ function initializeChangePassword() {
         var goodOldPass = (typeof oldpassword != "undefined" && oldpassword.length != 0);
         var goodNewPass = (typeof newpassword != "undefined" && newpassword.length != 0);
         var goodConfPass = (typeof confirmpassword != "undefined" && confirmpassword.length != 0);
-        var goodMatching = (goodNewPass && goodConfPass && newpassword == oldpassword);
+        var goodMatching = (goodNewPass && goodConfPass && newpassword == confirmpassword);
 
         var response_msg = $('#changePasswordForm .response-msg');
         if(!goodOldPass && !goodMatching) {
