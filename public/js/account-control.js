@@ -212,6 +212,7 @@ function initializeAboutPageNavigation() {
 	})
 
     setExperienceBarProgress();
+    setLevelNumber();
 }
 // Jiaming
 function calculateLevelWithRemainder() {
@@ -254,6 +255,15 @@ function setExperienceBarProgress() {
     width_string = width_string+'%';
     console.log('width-string'+width_string);
     experience_bar.width(width_string); // use fraction as percentage here
+}
+
+function setLevelNumber(){
+  var level = $('.content.scroll .profile.card .level');
+  var num =calculateLevel();
+  if(num<0){
+    num = 0;
+  }
+  level.text("Level: "+ num);
 }
 
 function anyClicked(form_and_btns, e) {
