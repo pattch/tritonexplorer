@@ -245,7 +245,9 @@ function setExperienceBarProgress() {
 
     // calculate fraction here
     var width = calculateLevel() / calculateLevelWithRemainder();
-
+    if (calculateLevel()<0){
+      width = 0;
+    }
     var num = width*100;
     width = num.toFixed(2);
     console.log('width'+width);
