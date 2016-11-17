@@ -9,7 +9,7 @@
   </head>
 <body>
   <div class="header vert-bg">
-      <p class="header">About Me</p>
+      <p class="header">Profile</p>
       <!-- <a href="/about/"><img class="header-icon" src="/images/notification.png" alt="Edit" style="width:40px;height:40px"></a> -->
   </div>
 
@@ -49,42 +49,26 @@
       <br>
     </div>
     {{else}}
-    <div class="sidebar">
+    <!--<div class="sidebar">
         This is a sidebar! Even though it looks terrible lol!
-    </div>
-    
+    </div> -->
     <div class="profile card">
       <br>
       <center>
         <img src="/images/profile_man.png" alt=""style="width:100px;height:100px">
-        <br><span class="name">John Smith</span><br>
-        <br><span class="title">Entry Level Explorer</span><br>
+        <br><span class="name">Guest Account</span><br>
+        <br><span class="title">Welcome to Triton Explorer!<br>Please Login to Explore All the Cool Functions We Have!</span><br>
         <br>
-        <div class="w3-container" style="width:40%">
-            <div class="w3-progress-container w3-round-large">
-                <div class="w3-progressbar w3-round-large w3-green" style="width:75%"></div>
-            </div>
-        </div>
         <br>
       </center>
     </div>
 
     <div id="no-account" class="profile-links">
-      <div class="nav">College: Eleanor Roosevelt</div>
-      <div class="nav">Email: sample@ucsd.edu</div>
+      <div class="nav">Login to Fight for Your College!</div>
+      <div class="nav">And Earn Countless Awards!</div>
       <br />
       <!--<div class="nav" id="manage-friends">Manage Friends</div>-->
-      <div class="nav" onclick="openChangePassword()">Change Password</div>
       <div class="nav" onclick="openHelp()">Help &amp; Support</div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <!--Log out botton -->
-      <center>
-        <span id="logout"class="button button-red">log out</span>
-      </center>
-      <br>
     </div>
     {{/if}}
 
@@ -188,7 +172,7 @@
           Common Questions:
           <ol>
             <li>What should I do if I want to change my password?</li>
-            <p>You can change your password in about me page</p>
+            <p>You can change your password in Profile page</p>
             <li>What should I do if I cannot find an address?</li>
             <p>You can let others help you by adding a mission in the mission page</p>
             <li>How to add an address?</li>
