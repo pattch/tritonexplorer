@@ -37,8 +37,12 @@ function initializeLoginDialogs() {
 	var login_dialog_btn = $('.header .nav-left.login');
 	var register_dialog_btn = $('.header .nav-left.register');
     var cancel_btn = $('#loginform .cancel.button');
+    var overlay = $('#overlay');
 
-    if(accountID != -1) {
+    var overlayOpen = (typeof overlay != "undefined" && overlay.length != 0 && !overlay.hasClass('hidden'));
+    console.log(overlayOpen);
+
+    if(overlayOpen || accountID != -1) {
         login_dialog_btn.addClass('hidden');
         register_dialog_btn.addClass('hidden');
     }
