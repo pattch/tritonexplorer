@@ -335,8 +335,9 @@ div.sidebar{
 
 .content .upload.floating-button.plus:hover {
   background-color: #f03;
-  bottom:41px;
-  box-shadow: 6px 6px 5px rgba(150,150,150,0.8);
+  left: 21px;
+  bottom:39px;
+  box-shadow: 4px 4px 5px rgba(150,150,150,0.8);
 }
 .content .upload.floating-button.plus:active {
   background-color: #f36;
