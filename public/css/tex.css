@@ -547,19 +547,23 @@ h3.big.reward {
 }
 
 #changePasswordForm .response-msg,
-#loginform .response-msg {
+#loginform .response-msg,
+.registration .response-msg
+{
   text-align: center;
   margin: 0 15px;
 }
 
 #changePasswordForm .response-msg.failure,
-#loginform .response-msg.failure {
+#loginform .response-msg.failure,
+.registration .response-msg.failure{
   /*font-weight: 700;*/
   color: #f03;
 }
 
 #changePasswordForm .response-msg.success,
-#loginform .response-msg.success {
+#loginform .response-msg.success,
+.registration .response-msg.sucess{
   font-family: sans-serif;
   font-weight: 300;
   color: #78AB46;
