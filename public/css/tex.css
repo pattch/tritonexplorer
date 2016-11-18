@@ -80,6 +80,7 @@ img.header-icon{
     float:right;
     margin-top: 10px;
     margin-right: 10px;
+    z-index: 1000;
 }
 
 html
@@ -182,6 +183,16 @@ html
     list-style-position: inside;
 }
 
+div.sidebar{
+    z-index: 10000;
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    right:0;
+    background-color: #B37D4E;
+    color: white;
+    padding: 20px;
+}
 .start{
 	width:50%;
 	height: 20%;
