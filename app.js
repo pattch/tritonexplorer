@@ -46,14 +46,14 @@ if ('development' == app.get('env')) {
 // Add routes here
 
 // Home page
-app.get('/', index.view);
+app.get('/', index.viewb);
 // Home page for A/B Testing
-app.get('/index/', index.viewb);
+app.get('/index/', index.view);
 
 // Route for adding a new location
-app.post('/', locations.add);
+app.post('/', locations.addb);
 // Locations page for A/B Testing
-app.post('/index/', locations.addb);
+app.post('/index/', locations.add);
 // Route for showing a specific location by id
 app.get('/locations/id/:id', locations.view_by_id);
 // Route for showing a location by id for A/B Testing
