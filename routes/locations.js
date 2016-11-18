@@ -26,7 +26,10 @@ exports.add = function(req, res) {
 		rating = body.rating,
 		description = body.description,
 		lat = body.lat,
-		lng = body.lng;
+		lng = body.lng,
+		accountID = body.accountid;
+
+	addLocationExperience(accountID);
 
 	var id = loaded_locations.locations.length + 1;
 
@@ -48,6 +51,19 @@ exports.add = function(req, res) {
   		uploaded : true};
 
 	res.render('locations', data);
+}
+
+function addLocationExperience(accountID) {
+	if(typeof accountID == "undefined")
+		return 0;
+
+	var accounts = loaded_accounts.accounts;
+	for(var i = 0; i < accounts.length; i++) {
+		var account = accounts[i];
+		if(account["id"] == accountID) {
+			account["experience"] += 100;
+		}
+	}
 }
 
 // TODO: Implement this.

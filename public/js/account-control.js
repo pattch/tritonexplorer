@@ -10,6 +10,7 @@ $(document).ready(function() {
 	initializeAboutPageNavigation();
     initializeRegistration();
     initializeChangePassword();
+    initializeUploadLocation();
     redirectForAccount();
     fadeNavMessages();
 });
@@ -321,6 +322,16 @@ function fadeNavMessages() {
     });
 }
 
+function initializeUploadLocation() {
+    var upload = $('.content .upload.container'),
+        accountInput = upload.find('input.accountid');
+    
+    if(typeof accountInput != "undefined" 
+        && typeof accountID != -1
+        && accountID != -1)
+        accountInput.val(accountID);
+}
+
 function hideNav(nav_btns) {
     for(var i = 0; i < nav_btns.length; i = i + 1) {
         var nav_and_btns = nav_btns[i];
@@ -358,9 +369,9 @@ $(document).click(function(event) {
         closing : [$('.content .upload.container .button.button-red')]
     }
     var message_btns = {
-        nav : $('.content .fading.message'),
+        nav : $('.content .message'),
         buttons : [$(document)],
-        closing : []
+        closing : [$('.content .message .continue')]
     }
 
     var nav_btns = [
