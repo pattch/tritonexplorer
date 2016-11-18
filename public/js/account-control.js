@@ -260,7 +260,7 @@ function setExperienceBarProgress() {
     var experience_bar = $('.content .profile.card .w3-container .w3-progressbar');
 
     // calculate fraction here
-    var width = calculateLevel() / calculateLevelWithRemainder();
+    var width = (calculateLevelWithRemainder()-calculateLevel())/1;
     if (calculateLevel()<0){
       width = 0;
     }
@@ -325,8 +325,8 @@ function fadeNavMessages() {
 function initializeUploadLocation() {
     var upload = $('.content .upload.container'),
         accountInput = upload.find('input.accountid');
-    
-    if(typeof accountInput != "undefined" 
+
+    if(typeof accountInput != "undefined"
         && typeof accountID != -1
         && accountID != -1)
         accountInput.val(accountID);
@@ -345,7 +345,7 @@ $(document).click(function(event) {
     // console.log(target);
     var login_btns = {
         nav : $('#loginform'),
-        buttons : [$('.header .nav-left.login'), $('#overlay .login.button'),$('.nav.loginbutton')],
+        buttons : [$('.header .nav-left.login'), $('#overlay .login.button')],
         closing : [$('#loginform .cancel.button')]
     }
     var register_btns = {
