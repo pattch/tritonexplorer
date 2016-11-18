@@ -542,6 +542,10 @@ h3.big.reward {
   width: 100%;
 }
 
+.registration .response-msg {
+  width: 100%;
+}
+
 #changePasswordForm .response-msg,
 #loginform .response-msg {
   text-align: center;

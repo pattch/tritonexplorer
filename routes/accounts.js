@@ -82,7 +82,18 @@ exports.register = function(req, res) {
 		lastlogin = new Date();
 
 	var id = loaded_accounts.accounts.length + 1;
-
+    
+    var response = {};
+	response["auth"] = false;
+    
+    if(username.length<=4){
+        response["msg"] = "User name cannot be empty or shorter than 4 characters!"
+        console.log("User name too short");
+    }
+    else{
+        response["auth"]= true;
+    }
+    
 	var account = {
 		"id": id,
 		"name": name,
@@ -97,12 +108,15 @@ exports.register = function(req, res) {
 		"experience": 0,
 		"lastlogin": lastlogin
 	};
-
-	console.log(account);
-
-	loaded_accounts.accounts.push(account);
-
-	res.json(account);
+    
+    if(response["auth"])
+    {
+        console.log(account);
+            
+        loaded_accounts.accounts.push(account);
+            
+        res.json(account);
+    }	
 }
 
 exports.changepassword = function(req, res) {
