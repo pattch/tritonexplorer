@@ -47,11 +47,17 @@ if ('development' == app.get('env')) {
 
 // Home page
 app.get('/', index.view);
+// Home page for A/B Testing
+app.get('/index/', index.viewb);
 
 // Route for adding a new location
 app.post('/', locations.add);
+// Locations page for A/B Testing
+app.post('/index/', locations.addb);
 // Route for showing a specific location by id
 app.get('/locations/id/:id', locations.view_by_id);
+// Route for showing a location by id for A/B Testing
+app.get('/locationsb/id/:id', locations.view_by_idb);
 // Route for showing a specific location by name
 app.get('/locations/name/:name', locations.view_by_name);
 // Route for getting all locations as a JSON object

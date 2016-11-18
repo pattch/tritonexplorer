@@ -1,0 +1,142 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width" />
+
+<html>
+<head>
+	<title>Triton Explorer</title>
+	<link href="/css/tex.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+</head>
+
+<body>
+	<div class="header vert-bg">
+        <p class="header">Triton Explorer</p>
+      	<span class="nav-left login">Log In</span>
+        <img class="logo" src="/images/logo.png" style="width:60px;height:60px;"/>
+	</div>
+
+	<div class="content">
+		<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+		<div class="fill" id="map"></div>
+
+		<div class="upload floating-button plus">
+			<!-- <span class="" -->
+			+
+		</div>
+
+		<div class="upload container hidden">
+			<h3>Submit New Location</h3>
+
+<!--             <div class="add-photo">
+                <br/>
+                <a href="/" style="text-decoration: none; color:white">Add a Photo Here(More XP!)</a>
+            </div> -->
+
+			<form action="/index/" method="post">
+				<p>
+					<span class="title">Name</span><input type="text" name="title" />
+				</p>
+				<p>
+					<span class="title">Tags</span><input type="text" name="tags" />
+				</p>
+				<p>
+					<span class="title">Rating (1-5)</span>
+	                <!--<input type="number" name="rating" min="1" max="5" /> -->
+	                <span class="starRating">
+	                    <input id="rating5" type="radio" name="rating" value="5">
+	                    <label for="rating5">5</label>
+	                    <input id="rating4" type="radio" name="rating" value="4">
+	                    <label for="rating4">4</label>
+	                    <input id="rating3" type="radio" name="rating" value="3">
+	                    <label for="rating3">3</label>
+	                    <input id="rating2" type="radio" name="rating" value="2">
+	                    <label for="rating2">2</label>
+	                    <input id="rating1" type="radio" name="rating" value="1">
+	                    <label for="rating1">1</label>
+	                </span>
+	            </p>
+				<p>
+					<span class="title">Description</span>
+					<input type="text" name="description" /><br />
+					<input type="text" name="accountid" class="accountid hidden" />
+				</p>
+				<p>
+					<span class="title">Latitude</span>
+					<input type="text" id="input-lat" name="lat" value="32.8786" />
+					<span class="title">Longitude</span>
+					<input type="text" id="input-lng" name="lng" value="-117.2359" />
+					<input type="button" value="Detect Location" onclick="getGeoLocationConst()" /><br />
+					<center>
+	                    <button type="submit" id="add-location" class="button button-green">Submit</button>
+	                    <span class="button button-red">Cancel</span>
+	                </center>
+	            </p>
+			</form>
+		</div>
+
+		<div id="loginform" class="loginbox hidden">
+			<div class="authentication">
+				<!--Login form-->
+			    <h3>Login</h3>
+			    <p class="response-msg"></p>
+			    username: <input type="text" id="username"><br />
+			    password: <input type="text" id="password"><br />
+			    <center>
+			    	<span id="login-submit" class="login button" >login</span>
+			    	<span id="login-cancel" class="cancel button"/>cancel</span>
+			    </center>
+			</div>
+
+			<div class="registration">
+				<h3>Register</h3>
+				Username: <input type="text" class="username" name="username" value="username" /><br />
+				Password: <input type="text" class="password" name="password" value="password" /><br />
+				Name: <input type="text" class="name" name="name" value="John Smith" /><br />
+				Email: <input type="text" class="email" name="email" value="email@web.com" /><br />
+				College: <input type="text" class="college" name="college" value="college" /><br />
+			    <center>
+			    	<span id="register-submit" class="register button">register</span>
+			    	<span id="register-cancel" class="cancel button"/>cancel</span>
+			    </center>
+			</div>
+		</div>
+	</div>
+
+	<!--overlay login page-->
+	<div id="overlay" class="overlay vert-bg">
+		<center>
+			<span id="login" class="login start button">Login / Register</span>
+			<span id="guest" class="guest start button">Continue As Guest</span><br/>
+		</center>
+	</div>
+
+	<div class="footer vert-bg">
+		<a  class="nav-button" href="/objective/">
+            <img src="/images/objectives.png" style="width:60px; height=60px">
+            <p>Missions</p>
+        </a>
+		<a class="nav-button" href="/recommendations/">
+            <img src="/images/discover.png" style="width:60px; height=60px">
+            <p>Discover</p>
+        </a>
+		<a class="nav-button active" href="/index/">
+            <img src="/images/home.png" style="width:60px; height=60px">
+            <p>Home</p>
+        </a>
+		<a class="nav-button" href="/ranking/">
+            <img src="/images/ranking.png" style="width:60px; height=60px">
+            <p>Ranking</p>
+        </a>
+		<a class="nav-button" href="/about/">
+            <img src="/images/user.png" style="width:60px; height=60px">
+            <p>Profile</p>
+        </a>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="/js/map-control.js"></script>
+	<script src="/js/account-control.js"></script>
+	<script src="/js/overlay.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB82M8lTcnbfwp8lvbLN1Q30LLWAX2I-zE&libraries=places&callback=initMap"></script>
+</body>
+</html>
