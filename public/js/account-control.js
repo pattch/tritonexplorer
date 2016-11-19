@@ -104,7 +104,6 @@ function authenticateByUsername(username,password) {
             }
         } else {
             message_congainer.addClass('failure');
-            message_congainer.addClass('success');
         }
     });
 }
@@ -168,7 +167,6 @@ function registerNewUser(username,password,name,email,college) {
         var auth = data["auth"];
         var msg = data["msg"];
         var message_congainer = $('.registration .response-msg');
-        console.log(msg);
         message_congainer.text(msg);
         
         if(auth) {
@@ -181,7 +179,7 @@ function registerNewUser(username,password,name,email,college) {
             }
         else {
             message_congainer.addClass('failure');
-            message_congainer.text(msg);
+            message_congainer.innerHTML(msg);
         }
         // console.log(data);
         // console.log(data["id"]);

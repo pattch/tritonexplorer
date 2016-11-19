@@ -85,19 +85,17 @@ exports.register = function(req, res) {
 
 	var id = loaded_accounts.accounts.length + 1;
     
-    //create a response array
-    var response = {};
-	response["auth"] = false;
-    response["msg"]="Something went wrong";
+    //create variables
+	var auth = false;
+    var msg="Welcome to Triton Explorer!";
     
     //if the username is shorter, change the msg
     if(username.length<=4){
-        response["msg"] = "User name cannot be empty or shorter than 4 characters!"
-        console.log("User name too short");
+        msg = "User name cannot be equal or shorter than 4 characters!";
     }
     //if all the conditions are satisfied, set response auth to true
     else{
-        response["auth"]= true;
+        auth = true;
     }
     
 	var account = {
@@ -112,7 +110,9 @@ exports.register = function(req, res) {
 		"password": password,
 		"email": email,
 		"experience": 0,
-		"lastlogin": lastlogin
+		"lastlogin": lastlogin,
+        "auth": auth,
+        "msg": msg,
 	};
     
         console.log(account);
