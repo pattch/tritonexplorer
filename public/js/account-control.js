@@ -134,35 +134,6 @@ function registerNewUser(username,password,name,email,college) {
     };
     console.log(account);
     $.post(registrationURL, account)
-    /*
-    .done(function( data ) {
-        var auth = data["auth"];
-        var msg = data["msg"];
-        var message_congainer = $('#loginform .response-msg');
-        message_congainer.text(msg);
-
-        if(auth) {
-            var account = data["account"];
-            var accountID = account["id"];
-            console.log(msg);
-            if(typeof accountID == "undefined") {
-                msg = "Something went wrong, please try again."
-                message_congainer.addClass('failure');
-                message_congainer.removeClass('success');
-                message_congainer.text(msg);
-            } else {
-                document.cookie = "accountID=" + accountID + ";max-age=31536000;path=/";
-                message_congainer.addClass('success');
-                message_congainer.removeClass('failure');
-                setTimeout(function() {
-                    location.reload();
-                }, 2000);
-            }
-        } else {
-            message_congainer.addClass('failure');
-            message_congainer.addClass('success');
-        }
-    });*/
     .done(function( data ) {
         var auth = data["auth"];
         var msg = data["msg"];

@@ -85,16 +85,40 @@ exports.register = function(req, res) {
 
 	var id = loaded_accounts.accounts.length + 1;
     
-    //create variables
+    //Auth detects if the user input is valid, msg is the
+    //corresponding error messages if input is invalid
 	var auth = false;
-    var msg="Welcome to Triton Explorer!";
+    var msg="Awesome! Welcome to Triton Explorer ^_^";
+    //re is Standard Email address format for testing email
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     
-    //if the username is shorter, change the msg
+    //if the username is shorter or equal to 4, change the msg
     if(username.length<=4){
-        msg = "User name cannot be equal or shorter than 4 characters!";
+        msg = "Username should be longer than 4 characters to distinguish yourself from the others. ~_~";
+    } else if(password.length<6){
+        //if the password is shorter or equal to 6
+        msg = "For your safety, password should be longer than 6 characters. o_o";
     }
-    //if all the conditions are satisfied, set response auth to true
+    else if(/^[a-zA-Z0-9- ]*$/.test(name) == false){
+        //if the password is shorter or equal to 6
+        msg = "Name cannot contain special charaters such as #@%!$ =_=";
+    }
+    else if(name.length<=1){
+        //if the password is shorter or equal to 6
+        msg = "Dude your name should be longer than 1 character! @_@";
+    }
+    else if(re.test(email) == false){
+        //if the password is shorter or equal to 6
+        msg = "Your email is not in correct format - please do sample@domain.xxx >_>";
+    }
+    /*
+    else if(college is not valid)
+    {
+        msg = "College input not valid!";
+    }
+    */
     else{
+        //if all the conditions are satisfied, set response auth to true
         auth = true;
     }
     
