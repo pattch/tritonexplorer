@@ -18,6 +18,9 @@
     input[type=text], select{
         width:50%;
     }
+    input[type=password], select{
+        width:50%;
+    }
     /*Make all the input button fit*/
     input[type=button], select
     {
