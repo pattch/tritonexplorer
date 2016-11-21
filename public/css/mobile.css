@@ -14,6 +14,13 @@
         left:5%;
         width:90%;
     }
+    /*Disable Auto Zoom feature on iPhone*/
+    input[type='text'],
+    input[type='number'],
+    input[type='password'],
+    textarea {
+        font-size: 16px;
+    }
     /*Make all the blanks in forms fit*/
     input[type=text], select{
         width:50%;
