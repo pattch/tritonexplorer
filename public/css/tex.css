@@ -210,15 +210,15 @@ div.sidebar{
     z-index: 100; /* Sit on top */
     left: 0;
     padding-top: 20px;
-    top:10%;
-		bottom:15%;
-		height: 75%;
+    top:0%;
+    height: 100%;
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 
 .overlay h2{
     font-family: 'lobster', cursive;
+    font-size: 2em;
 }
 
 .overlay h3{
@@ -231,7 +231,7 @@ div.sidebar{
     border-width: 2px;
     font-family: 'Indie Flower', cursive;
     font-size:1.25em;
-    margin-top: 5%;
+    margin-top: 10%;
     float:left;
     width:50%;
     padding: 5px;
@@ -240,7 +240,7 @@ div.sidebar{
 #overlayguest{
     font-family: 'Indie Flower', cursive;
     font-size:1.25em;
-    margin-top: 5%;
+    margin-top: 10%;
     float:left;
     width:50%;
     padding: 5px;
