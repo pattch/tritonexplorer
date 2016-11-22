@@ -58,12 +58,14 @@
     /*Make the login and guest div in overlay fit*/
     #overlaylogin{
         padding: 2px;
+        font-size:1.25em;
         margin-top: 30%;
     }
 
     #overlayguest{
         margin-top: 30%;
         /*min-width: 184px;*/
+        font-size:1.25em;
         padding: 2px;
     }
     
