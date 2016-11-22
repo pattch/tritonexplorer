@@ -94,26 +94,26 @@ exports.register = function(req, res) {
     
     //if the username is shorter or equal to 4, change the msg
     if(username.length<=4){
-        msg = "Username should be longer than 4 characters to distinguish yourself from the others. o_o";
+        msg = "Username should be longer than 4 characters o_o";
     } else if(password.length<6){
         //if the password is shorter or equal to 6
-        msg = "For your safety, password should be longer than 6 characters. x_x";
+        msg = "Password should be longer than 6 characters for safety x_x";
     }
     else if(/^[a-zA-Z0-9- ]*$/.test(name) == false){
         //if the password is shorter or equal to 6
-        msg = "Name cannot contain special charaters such as #@%!$ =_=";
+        msg = "Name cannot contain special charaters =_=";
     }
     else if(name.length<=1){
         //if the password is shorter or equal to 6
-        msg = "Your name should be longer than 1 character! @_@";
+        msg = "Name should be longer than 1 character @_@";
     }
     else if(re.test(email) == false){
         //if the password is shorter or equal to 6
-        msg = "Your email is not in correct format - please do sample@domain.xxx >_>";
+        msg = "Your email is not in correct format >_>";
     }
     else if(college==="noinput")
     {
-        msg = "Please select collge >_<";
+        msg = "Please select college >_<";
     }
     else{
         //if all the conditions are satisfied, set response auth to true

@@ -15,6 +15,7 @@ function initializeLoginOverlay() {
   account = getCookie("accountID");
 
   if(clicked==1 || (typeof account != "undefined" && account != -1)){
+    $('#overlay').fadeOut(500);
     $('#overlay').addClass('hidden');
     $('.nav-left.login').removeClass('hidden');
     console.log(account);
@@ -27,14 +28,16 @@ function initializeLoginOverlay() {
     clicked = 1;
     console.log(clicked);
 
-    $('#overlay').addClass('hidden');
+    $('#overlay').fadeOut(500);
+    setTimeout(function(){ $('#overlay').addClass('hidden'); }, 500);
     $('.nav-left.login').removeClass('hidden');
     $('#loginform').removeClass('hidden');
 	});
 
 	guest_btn.click(function() {
     clicked = 1;
-    $('#overlay').addClass('hidden');
+    $('#overlay').fadeOut(500);
+    setTimeout(function(){ $('#overlay').addClass('hidden'); }, 500);
     $('.nav-left.login').removeClass('hidden');
     var cookie_time = 60 * 60 * 30; // 30 minutes
     document.cookie = "clicked=1; max-age=" + cookie_time + "; path=/";
