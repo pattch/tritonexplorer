@@ -49,4 +49,21 @@
         width:90%
     }
     
+    /*Make the overlay fit*/
+    .start{
+        width:80%;
+	    margin-top: 20%;
+    }
+    
+    /*Make the login and guest div in overlay fit*/
+    #overlaylogin{
+        min-width: 184px;
+        padding: 2px;
+    }
+
+    #overlayguest{
+        min-width: 184px;
+        padding: 2px;
+    }
+    
 }

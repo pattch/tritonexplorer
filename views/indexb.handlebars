@@ -6,6 +6,7 @@
 	<title>Triton Explorer</title>
 	<link href="/css/tex.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Delius+Unicase|Indie+Flower|Lobster|Roboto" rel="stylesheet">
     <link href="/css/mobile.css" rel="stylesheet">
 </head>
 
@@ -119,8 +120,17 @@
 	<!--overlay login page-->
 	<div id="overlay" class="overlay vert-bg">
 		<center>
-			<span id="login" class="login start button">Login / Register</span>
-			<span id="guest" class="guest start button">Continue As Guest</span><br/>
+            <img src="/images/compass.png" style="width:150px;height:150px" />
+            <h3>Welcome to </h3>
+            <h2>Triton Explorer!</h2>
+            <div id="overlayguest">
+                <p>If you just need to navigate around</p>
+			     <span id="guest" class="guest start button">Continue As Guest</span><br/>
+            </div>
+            <div id="overlaylogin">
+                <p>If you want to access all we offer</p>
+			     <span id="login" class="login start button">Login / Register</span>
+            </div>
 		</center>
 	</div>
 
