@@ -1,6 +1,8 @@
 'use strict';
 
+var searchable_mixed = [];
 var searchable_titles = [];
+var location_id_by_tag = {};
 var location_id_by_title = {};
 
 $(document).ready(function() {
@@ -77,21 +79,50 @@ function getLocations() {
 	  	$.each(response, function(index, obj) {
 	  		var loc_name = obj['name'];
 	  		var loc_id = obj['id'];
+	  		var tags = obj['tags'];
 	  		searchable_titles.push(loc_name);
+	  		searchable_mixed.push(loc_name);
 	  		location_id_by_title[loc_name] = loc_id;
-	  	})
+	  		for(var i = 0; i < tags.length; i = i + 1) {
+	  			var ids_by_tag = location_id_by_tag[tags[i]];
+	  			if(typeof ids_by_tag == "undefined") {
+	  				ids_by_tag = [];
+	  			}
+  				ids_by_tag.push(loc_id);
+  				location_id_by_tag[tags[i]] = ids_by_tag;
+  				var tag = tags[i];
+  				if(typeof tag != "undefined" && tag != "" && $.inArray(tag,searchable_mixed) == -1)
+  					searchable_mixed.push(tag);
+	  		}
+	  	});
+
+	  	console.log(searchable_mixed);
 	  }
 	});
+}
+
+function getIdByLabel(label) {
+	// Try to get it by location
+	var loc_id = location_id_by_title[label];
+	if(typeof loc_id != "undefined")
+		return loc_id;
+
+	// Otherwise searching by tags, for now just return any location associated with tag
+	var tag_ids = location_id_by_tag[label];
+	if(typeof tag_ids != "undefined" && tag_ids.length != 0) {
+		return tag_ids[0];
+	}
+
 }
 
 function initSearch(searchBox) {
 	getLocations();
 
 	searchBox.autocomplete({
-		source: searchable_titles,
+		source: searchable_mixed,
 		select: function(event, ui) {
-			var name = ui.item.label;
-			var id = location_id_by_title[name];
+			var label = ui.item.label;
+			var id = getIdByLabel(label);
 			var url = "/locations/id/" + id;
 			location.href=url;
 		}
