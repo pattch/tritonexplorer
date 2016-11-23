@@ -34,35 +34,10 @@ function initializeLogin() {
 }
 
 function initializeLoginDialogs() {
-	var login_dialog_btn = $('.header .nav-left.login');
-	var register_dialog_btn = $('.header .nav-left.register');
-    var cancel_btn = $('#loginform .cancel.button');
-    var overlay = $('#overlay');
-
-    var overlayOpen = (typeof overlay != "undefined" && overlay.length != 0 && !overlay.hasClass('hidden'));
-    console.log(overlayOpen);
-
-    if(overlayOpen || accountID != -1) {
-        login_dialog_btn.addClass('hidden');
-        register_dialog_btn.addClass('hidden');
+    if(accountID != -1) {
+        var login_btn = $('.header .nav-left.login');
+        login_btn.hide();
     }
-
-	login_dialog_btn.click(function() {
-		console.log("showing login form");
-		$('#loginform').removeClass('hidden');
-		$('#registerform').addClass('hidden');
-	});
-
-	register_dialog_btn.click(function() {
-		$('#loginform').addClass('hidden');
-		$('#registerform').removeClass('hidden');
-	});
-
-    cancel_btn.click(function() {
-        console.log("Closing forms.");
-        $('#loginform').addClass('hidden');
-        $('#registerform').addClass('hidden');
-    });
 }
 
 function initializeLoginAuthentication() {
@@ -150,7 +125,7 @@ function registerNewUser(username,password,name,email,college) {
             }
         else {
             message_congainer.addClass('failure');
-            message_congainer.innerHTML(msg);
+            message_congainer.text(msg);
         }
         // console.log(data);
         // console.log(data["id"]);
