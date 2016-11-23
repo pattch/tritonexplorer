@@ -316,8 +316,8 @@ function fadeNavMessages() {
 }
 
 function initializeUploadLocation() {
-    var upload = $('.content .upload.container'),
-        accountInput = upload.find('input.accountid');
+    var container = $('.content .upload.container'),
+        accountInput = container.find('input.accountid');
 
     if(typeof accountInput != "undefined"
         && typeof accountID != -1

@@ -47,10 +47,15 @@ exports.add = function(req, res) {
 
 	var id = loaded_locations.locations.length + 1;
 
+	var tagList = tags.split("/[\s,]+/");
+
+	// console.log("Tag List");
+	// console.log(tagList);
+
 	var location = {
 		"id": id,
 		"name": title,
-		"tags": tags,
+		"tags": tagList,
 		"rating": rating,
 		"description": description,
 		"lat": lat,
@@ -82,10 +87,15 @@ exports.addb = function(req, res) {
 
 	var id = loaded_locations.locations.length + 1;
 
+	var tagList = tags.split(/[\s,]+/);
+
+	// console.log("Tag List");
+	// console.log(tagList);
+
 	var location = {
 		"id": id,
 		"name": title,
-		"tags": tags,
+		"tags": tagList,
 		"rating": rating,
 		"description": description,
 		"lat": lat,
