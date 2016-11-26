@@ -13,7 +13,15 @@ $(document).ready(function() {
     initializeUploadLocation();
     redirectForAccount();
     fadeNavMessages();
+    initializeFooterLinks();
 });
+
+function getTestCondition() {
+    var condition = getCookie("testcondition");
+    if(typeof condition != "undefined" && condition != null)
+        return condition;
+    return false;
+}
 
 function getAccountID() {
     var id = getCookie("accountID");
@@ -78,6 +86,7 @@ function authenticateByUsername(username,password) {
                 message_congainer.text(msg);
             } else {
                 document.cookie = "accountID=" + accountID + ";max-age=31536000;path=/";
+                document.cookie = "testcondition=" + testcondition + ";max-age=31536000;path=/";
                 message_congainer.addClass('success');
                 message_congainer.removeClass('failure');
                 setTimeout(function() {
@@ -135,6 +144,7 @@ function registerNewUser(username,password,name,email,college) {
 
         if(auth) {
                 document.cookie = "accountID=" + data["id"] + ";max-age=31536000;path=/";
+                document.cookie = "testcondition=" + testcondition + ";max-age=31536000;path=/";
                 message_congainer.addClass('success');
                 message_congainer.removeClass('failure');
                 setTimeout(function() {
@@ -351,6 +361,21 @@ function hideNav(nav_btns) {
         var nav_and_btns = nav_btns[i];
         var nav = nav_and_btns.nav;
         nav.addClass('hidden');
+    }
+}
+
+function initializeFooterLinks() {
+    var container = $('.footer');
+    var testcondition = getTestCondition();
+    var home_link = container.find('a').eq(2);
+
+    console.log(testcondition);
+
+    if(testcondition == "true") {
+        // change home page
+        home_link.attr('href','/');
+    } else {
+        home_link.attr('href','/index/');
     }
 }
 

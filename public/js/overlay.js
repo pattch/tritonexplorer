@@ -54,6 +54,7 @@ function logOut(){
     $('#overlay').removeClass('hidden');
     document.cookie = "clicked=0; max-age=-1; path=/";
     document.cookie = "accountID=-1; max-age=-1; path=/";
+    document.cookie = "testcondition=false; max-age=-1; path=/";
     // alert("Redirecting");
     window.location.href = "/";
 	});
