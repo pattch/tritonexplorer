@@ -115,15 +115,34 @@ function getIdByLabel(label) {
 
 }
 
+function getTestCondition() {
+    var condition = getCookie("testcondition");
+    if(typeof condition != "undefined" && condition != null)
+        return condition;
+    return "false";
+}
+
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
 function initSearch(searchBox) {
 	getLocations();
+
+	var locations_url = "/locationsb/id/";
+	var testcondition = getTestCondition();
+	if(testcondition != "true") {
+		locations_url = "/locations/id/";
+	}
 
 	searchBox.autocomplete({
 		source: searchable_mixed,
 		select: function(event, ui) {
 			var label = ui.item.label;
 			var id = getIdByLabel(label);
-			var url = "/locations/id/" + id;
+			var url = locations_url + id;
 			location.href=url;
 		}
 	});
