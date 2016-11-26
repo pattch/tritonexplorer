@@ -12,7 +12,8 @@
 			"password": "password",
 			"email": "email@web.com",
 			"lastlogin": "Wed Nov 16 2016 20:38:46 GMT-0800 (PST)",
-			"experience": 0
+			"experience": 0,
+			"testcondition": true
 		},
 		{
 			"id": 2,
@@ -26,7 +27,8 @@
 			"password": "password",
 			"email": "email@web.com",
 			"lastlogin": "Wed Nov 16 2016 20:38:46 GMT-0800 (PST)",
-			"experience": 0
+			"experience": 0,
+			"testcondition": false
 		},
 		{
 			"id": 3,
@@ -40,7 +42,8 @@
 			"password": "password",
 			"email": "email@web.com",
 			"lastlogin": "Wed Nov 16 2016 20:38:46 GMT-0800 (PST)",
-			"experience": 0
+			"experience": 0,
+			"testcondition": true
 		},
 		{
 			"id": 4,
@@ -54,7 +57,8 @@
 			"password": "password",
 			"email": "email@web.com",
 			"lastlogin": "Wed Nov 16 2016 20:38:46 GMT-0800 (PST)",
-			"experience": 0
+			"experience": 0,
+			"testcondition": true
 		},
 		{
 			"id": 5,
@@ -68,7 +72,8 @@
 			"password": "password",
 			"email": "email@web.com",
 			"lastlogin": "Wed Nov 16 2016 20:38:46 GMT-0800 (PST)",
-			"experience": 0
+			"experience": 0,
+			"testcondition": false
 		}
 	]
 }

@@ -84,6 +84,7 @@ exports.register = function(req, res) {
 		lastlogin = new Date();
 
 	var id = loaded_accounts.accounts.length + 1;
+	var testcondition = Math.random() < 0.5;
     
     //Auth detects if the user input is valid, msg is the
     //corresponding error messages if input is invalid
@@ -135,11 +136,13 @@ exports.register = function(req, res) {
 		"lastlogin": lastlogin,
         "auth": auth,
         "msg": msg,
+        "testcondition": testcondition
 	};
     
         console.log(account);
-            
-        loaded_accounts.accounts.push(account);
+        
+        if(auth)
+        	loaded_accounts.accounts.push(account);
             
         res.json(account);
 }
