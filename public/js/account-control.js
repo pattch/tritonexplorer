@@ -68,8 +68,12 @@ function authenticateByUsername(username,password) {
         var testcondition = false;
         var account = data["account"];
         console.log(account);
-        if(typeof account != "undefined")
+        if(typeof account != "undefined") {
             testcondition = account["testcondition"];
+            console.log(data);
+        } else {
+            console.log(data);
+        }
         var message_congainer = $('#loginform .response-msg');
         message_congainer.text(msg);
 
@@ -87,14 +91,17 @@ function authenticateByUsername(username,password) {
             } else {
                 document.cookie = "accountID=" + accountID + ";max-age=31536000;path=/";
                 document.cookie = "testcondition=" + testcondition + ";max-age=31536000;path=/";
+                console.log(testcondition);
                 message_congainer.addClass('success');
                 message_congainer.removeClass('failure');
                 setTimeout(function() {
-                    if(typeof testcondition != "undefined" && testcondition) {
+                    if(typeof testcondition != "undefined" && (testcondition == "true" || testcondition)) {
                         location.reload();
                     }
-                    else
+                    else {
+                        console.log(testcondition);
                         window.location.href = "./index/";
+                    }
                 }, 2000);
             }
         } else {
@@ -148,10 +155,13 @@ function registerNewUser(username,password,name,email,college) {
                 message_congainer.addClass('success');
                 message_congainer.removeClass('failure');
                 setTimeout(function() {
-                    if(typeof testcondition != "undefined" && testcondition)
+                    if(typeof testcondition != "undefined" && (testcondition == "true" || testcondition)) {
                         location.reload();
-                    else
+                    }
+                    else {
+                        console.log(testcondition);
                         window.location.href = "./index/";
+                    }
                 }, 2000);
             }
         else {
