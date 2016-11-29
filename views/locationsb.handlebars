@@ -20,8 +20,8 @@
 		<input id="pac-input" class="controls" type="text" placeholder="Search Box">
 		<div class="fill" id="map"></div>
 
-		<div class="upload floating-button plus">
-			+
+		<div class="upload floating-button">
+			<img src="/images/upload.png" style="width:80px; height:80px">
 		</div>
 
 		<div class="upload container hidden">
@@ -32,7 +32,7 @@
                 <a href="/" style="text-decoration: none; color:white">Add a Photo Here(More XP!)</a>
             </div> -->
 
-			<form action="/" method="post">
+			<form action="/index/" method="post">
 				<p>
 					<span class="title">Title</span><input type="text" name="title" />
 				</p>
@@ -116,26 +116,26 @@
 	</div>
 	<!--Login form-->
 	<div id="loginform" class="loginbox hidden">
-		<div class="authentication">
-			<!--Login form-->
-				<h3>Login</h3>
-				<p class="response-msg"></p>
-				username: <input type="text" id="username"><br />
-				password: <input type="password" id="password"><br />
-				<center>
-					<span id="login-submit" class="login button" >login</span>
-					<span id="login-cancel" class="cancel button">cancel</span>
-				</center>
-		</div>
+					<div class="authentication">
+						<!--Login form-->
+					    <h3>Login</h3>
+					    <p class="response-msg"></p>
+					    username: <input type="text" id="username" placeholder="Username"><br />
+					    password: <input type="password" id="password" placeholder="Password"><br />
+					    <center>
+					    	<span id="login-submit" class="login button" >Login</span>
+					    	<span id="login-cancel" class="cancel button">Cancel</span>
+					    </center>
+					</div>
 
-		<div class="registration">
-			<h3>Register</h3>
-            <p class="response-msg"></p>
-			Username: <input type="text" class="username" name="username" placeholder="Username" /><br />
-            Password: <input type="password" class="password" name="password" placeholder="Password" /><br />
-            Name: <input type="text" class="name" name="name" placeholder="Your Name" /><br />
-            Email: <input type="text" class="email" name="email" placeholder="Your Email" /><br />
-			College: <select class="college" name="college">
+					<div class="registration">
+						<h3>Register</h3>
+                        <p class="response-msg"></p>
+						Username: <input type="text" class="username" name="username" placeholder="Username" /><br />
+						Password: <input type="password" class="password" name="password" placeholder="Password" /><br />
+						Name: <input type="text" class="name" name="name" placeholder="Your Name" /><br />
+						Email: <input type="text" class="email" name="email" placeholder="Your Email" /><br />
+						College: <select class="college" name="college">
                           <option value="noinput">- Please Select College -</option>
                           <option value="Revelle">Revelle College</option>
                           <option value="John Muir">John Muir College</option>
@@ -148,11 +148,12 @@
                           <option value="Vistor">Vistor</option>
                           <option value="Other">Other</option>
                         </select>
-				<center>
-					<span id="register-submit" class="register button">register</span>
-					<span id="register-cancel" class="cancel button"/>cancel</span>
-				</center>
-		</div>
+					    <center>
+					    	<span id="register-submit" class="register button">Register</span>
+                            <span id="register-cancel" class="cancel button">Cancel</span>
+					    </center>
+					</div>
+    </div>
 	</div>
 	<div class="footer vert-bg">
 		<a  class="nav-button" href="/objective/">
@@ -163,7 +164,7 @@
             <img src="/images/discover.png" style="width:60px; height=60px">
             <p>Discover</p>
         </a>
-		<a class="nav-button active" href="/">
+		<a class="nav-button active" href="/index/">
             <img src="/images/home.png" style="width:60px; height=60px">
             <p>Home</p>
         </a>
