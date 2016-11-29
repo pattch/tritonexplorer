@@ -494,6 +494,10 @@ input[type=button], select {
 	display: inline;
 }
 
+.content .upload.container form input.accountid.hidden {
+  display: none;
+}
+
 .content .uploaded.message {
   position: absolute;
   top: 10%;
